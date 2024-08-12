@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: 2024-08-06 14:39+0000\n"
+"PO-Revision-Date: 2024-08-14 12:07+0000\n"
 "Last-Translator: umesaburo sagawa <atowa-notonare-yamatonare427@pm.me>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/ja/>\n"
@@ -47,7 +47,7 @@ msgstr "後で電話を下さい。"
 #: approver/approver.cpp:457
 #, qt-format
 msgid "On [%1]"
-msgstr ""
+msgstr "オン"
 
 #: approver/approver.cpp:461 indicator/messagingmenu.cpp:414
 msgid "Private number"
@@ -147,14 +147,10 @@ msgid "Call back"
 msgstr "折り返し電話"
 
 #: indicator/messagingmenu.cpp:350
-#, fuzzy
-#| msgid "I missed your call - can you call me now?"
 msgid "Missed your call — can you call me now?"
 msgstr "電話をとれませんでした。今からかけてもらっていいですか？"
 
 #: indicator/messagingmenu.cpp:351
-#, fuzzy
-#| msgid "I'm running late. I'm on my way."
 msgid "Running late. On my way."
 msgstr "遅れています。今向かっているところです。"
 
