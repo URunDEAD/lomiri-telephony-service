@@ -54,6 +54,7 @@ tests/common/mock/mockconnectionadaptor.*
 tests/common/mock/telepathy-mock
 tests/common/dbus-session.conf
 tests/common/dbus-services/*
+!tests/common/dbus-services/CMakeLists.txt
 tests/Lomiri.Telephony/ContactWatcherTest
 tests/liblomiritelephonyservice/GreeterContactsTestExe
 tests/liblomiritelephonyservice/GreeterContactsTestServerExe
