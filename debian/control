@@ -32,6 +32,7 @@ Build-Depends: cmake,
                qtpim5-dev (>= 5),
                libusermetricsinput-dev,
                telepathy-mission-control-5,
+               xauth <!nocheck>,
                xvfb <!nocheck>,
 Standards-Version: 3.9.4
 Homepage: https://gitlab.com/ubports/development/core/lomiri-telephony-service
