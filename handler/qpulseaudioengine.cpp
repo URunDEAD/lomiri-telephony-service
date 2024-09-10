@@ -23,6 +23,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 
+#define PULSEAUDIO_PROFILE_HFP "handsfree_head_unit"
 #define PULSEAUDIO_PROFILE_HSP "headset_head_unit"
 #define PULSEAUDIO_PROFILE_A2DP "a2dp_sink"
 
@@ -109,10 +110,11 @@ QPulseAudioEngineWorker::QPulseAudioEngineWorker(QObject *parent)
     , m_defaultsink("sink.primary")
     , m_defaultsource("source.primary")
     , m_voicecallcard("")
-    , m_voicecallhighest("")
-    , m_voicecallprofile("")
     , m_bt_hsp("")
     , m_bt_hsp_a2dp("")
+    , m_bt_hsp_profile("")
+    , m_voicecallhighest("")
+    , m_voicecallprofile("")
 
 {
     m_mainLoop = pa_threaded_mainloop_new();
@@ -233,7 +235,7 @@ QPulseAudioEngineWorker::~QPulseAudioEngineWorker()
 void QPulseAudioEngineWorker::cardInfoCallback(const pa_card_info *info)
 {
     pa_card_profile_info2 *voice_call = NULL, *highest = NULL;
-    pa_card_profile_info2 *hsp = NULL, *a2dp = NULL;
+    pa_card_profile_info2 *hfp = NULL, *hsp = NULL, *a2dp = NULL;
 
     /* For now we only support one card with the voicecall feature */
     for (int i = 0; i < info->n_profiles; i++) {
@@ -242,6 +244,9 @@ void QPulseAudioEngineWorker::cardInfoCallback(const pa_card_info *info)
         if (!strcmp(info->profiles2[i]->name, "voicecall") ||
             !strcmp(info->profiles2[i]->name, "Voice Call"))
             voice_call = info->profiles2[i];
+        else if (!strcmp(info->profiles2[i]->name, PULSEAUDIO_PROFILE_HFP) &&
+                 info->profiles2[i]->available != 0)
+            hfp = info->profiles2[i];
         else if (!strcmp(info->profiles2[i]->name, PULSEAUDIO_PROFILE_HSP) &&
                  info->profiles2[i]->available != 0)
             hsp = info->profiles2[i];
@@ -261,13 +266,15 @@ void QPulseAudioEngineWorker::cardInfoCallback(const pa_card_info *info)
     }
 
     /* Handle the use cases needed for bluetooth */
-    if (hsp && a2dp) {
+    if ((hfp || hsp) && a2dp) {
         qDebug("Found card that supports hsp and a2dp: '%s'", info->name);
         m_bt_hsp_a2dp = info->name;
-    } else if (hsp && (a2dp == NULL)) {
+        m_bt_hsp_profile = hfp ? PULSEAUDIO_PROFILE_HFP : PULSEAUDIO_PROFILE_HSP;
+    } else if ((hfp || hsp) && (a2dp == NULL)) {
         /* This card only provides the hsp profile */
         qDebug("Found card that supports only hsp: '%s'", info->name);
         m_bt_hsp = info->name;
+        m_bt_hsp_profile = hfp ? PULSEAUDIO_PROFILE_HFP : PULSEAUDIO_PROFILE_HSP;
     }
     qDebug("3");
 }
@@ -471,7 +478,7 @@ int QPulseAudioEngineWorker::setupVoiceCall()
     /* Walk through the list of devices, find the voice call capable card and
      * identify if we have bluetooth capable devices (hsp and a2dp) */
     m_voicecallcard = m_voicecallhighest = m_voicecallprofile = "";
-    m_bt_hsp = m_bt_hsp_a2dp = "";
+    m_bt_hsp = m_bt_hsp_a2dp = m_bt_hsp_profile = "";
     o = pa_context_get_card_info_list(m_context, cardinfo_cb, this);
     if (!handleOperation(o, "pa_context_get_card_info_list"))
         return -1;
@@ -479,9 +486,9 @@ int QPulseAudioEngineWorker::setupVoiceCall()
      * to make sure we switch the default profile for that card (to hsp) */
     if ((m_bt_hsp_a2dp != "") && (m_bt_hsp == "")) {
         qDebug("Setting PulseAudio card '%s' profile '%s'",
-                m_bt_hsp_a2dp.c_str(), PULSEAUDIO_PROFILE_HSP);
+                m_bt_hsp_a2dp.c_str(), m_bt_hsp_profile.c_str());
         o = pa_context_set_card_profile_by_name(m_context,
-            m_bt_hsp_a2dp.c_str(), PULSEAUDIO_PROFILE_HSP, success_cb, this);
+            m_bt_hsp_a2dp.c_str(), m_bt_hsp_profile.c_str(), success_cb, this);
         if (!handleOperation(o, "pa_context_set_card_profile_by_name"))
             return -1;
     }
@@ -673,7 +680,8 @@ void QPulseAudioEngineWorker::plugCardCallback(const pa_card_info *info)
         /* Check if it's indeed a BT device (with at least one hsp profile) */
         pa_card_profile_info *hsp = NULL;
         for (int i = 0; i < info->n_profiles; i++) {
-            if (!strcmp(info->profiles[i].name, PULSEAUDIO_PROFILE_HSP))
+            if ((!strcmp(info->profiles[i].name, PULSEAUDIO_PROFILE_HFP)) ||
+                (!strcmp(info->profiles[i].name, PULSEAUDIO_PROFILE_HSP)))
                 hsp = &info->profiles[i];
         }
         if (hsp)
