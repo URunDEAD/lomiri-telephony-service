@@ -98,7 +98,7 @@ function(ENABLE_COVERAGE)
     set_property(DIRECTORY ${CMAKE_SOURCE_DIR} PROPERTY COVERAGE_TARGETS ${COVERAGE_TARGETS})
 endfunction()
 
-enable_testing()
+include(CTest)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -113,7 +113,9 @@ add_subdirectory(handler)
 add_subdirectory(tools)
 add_subdirectory(icons)
 add_subdirectory(po)
-add_subdirectory(tests)
+if (BUILD_TESTING)
+    add_subdirectory(tests)
+endif()
 add_subdirectory(protocols)
 
 if (WANT_UI_SERVICES)
