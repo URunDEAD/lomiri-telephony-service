@@ -38,6 +38,7 @@ install(TARGETS lomiri-telephony-service-approver RUNTIME DESTINATION ${CMAKE_IN
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.freedesktop.Telepathy.Client.TelephonyServiceApprover.service DESTINATION share/dbus-1/services)
 install(FILES LomiriTelephonyServiceApprover.client DESTINATION share/telepathy/clients)
 install(FILES 50-com.lomiri.TelephonyServiceApprover.pkla DESTINATION "${CMAKE_INSTALL_FULL_LOCALSTATEDIR}/lib/polkit-1/localauthority/10-vendor.d")
+install(FILES 50-com.lomiri.TelephonyServiceApprover.rules DESTINATION "${CMAKE_INSTALL_FULL_DATADIR}/polkit-1/rules.d")
 install(FILES com.lomiri.TelephonyServiceApprover.policy DESTINATION share/polkit-1/actions)
 install(FILES com.lomiri.TelephonyServiceApprover.xml DESTINATION share/dbus-1/interfaces)
 
