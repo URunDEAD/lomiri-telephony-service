@@ -45,8 +45,8 @@ Architecture: any
 Multi-Arch: foreign
 Conflicts: phone-app
 Replaces: phone-app,
-          telephony-service (<< 0.6.0~)
-Breaks: telephony-service (<< 0.6.0~)
+          telephony-service (<< 0.6.0~a~)
+Breaks: telephony-service (<< 0.6.0~a~)
 Provides: telephony-service (= ${binary:Version})
 Depends: lomiri-schemas,
          history-service,
@@ -76,7 +76,7 @@ Section: oldlibs
 Description: transitional package
  This is a transitional package. It can safely be removed.
 
-Package: qml-module-lomiri-telephony0.1
+Package: qml-module-lomiri-telephony
 Architecture: any
 Multi-Arch: same
 Depends: lomiri-schemas,
@@ -85,20 +85,52 @@ Depends: lomiri-schemas,
          ${misc:Depends},
          ${shlibs:Depends},
 Suggests: telepathy-ofono
+Breaks: qml-module-lomiri-telephony0.1 (<< 0.6.0~a~),
+Replaces: qml-module-lomiri-telephony0.1 (<< 0.6.0~a~),
 Description: Telephony service components for Lomiri - QML plugin
  Telephony service components for Lomiri.
  .
  This package contains the QML plugin providing the features from the telephony
  service to applications.
 
-Package: qml-module-lomiri-telephony-phonenumber0.1
+Package: qml-module-lomiri-telephony0.1
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         qml-module-lomiri-telephony (= ${binary:Version}),
+Description: Telephony service components for Lomiri - QML plugin (transitional package)
+ Telephony service components for Lomiri.
+ .
+ This package contains the QML plugin providing the features from the telephony
+ service to applications.
+ .
+ Transitional package.
+
+Package: qml-module-lomiri-telephony-phonenumber
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
          ${shlibs:Depends},
          qml-module-lomiri-components
-Description: Telephony service components for Lomiri - QML plugin
+Breaks: qml-module-lomiri-telephony-phonenumber0.1 (<< 0.6.0~a~),
+Replaces: qml-module-lomiri-telephony-phonenumber0.1 (<< 0.6.0~a~),
+Description: Telephony PhoneNumber components for Lomiri - QML plugin
  Telephony PhoneNumber components for Lomiri.
  .
  This package contains the QML plugin providing the features from the telephony
  PhoneNumber to applications.
+
+Package: qml-module-lomiri-telephony-phonenumber0.1
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         qml-module-lomiri-telephony-phonenumber (= ${binary:Version}),
+Description: Telephony PhoneNumber components for Lomiri - QML plugin (transitional package)
+ Telephony PhoneNumber components for Lomiri.
+ .
+ This package contains the QML plugin providing the features from the telephony
+ PhoneNumber to applications.
+ .
+ Transitional package.
