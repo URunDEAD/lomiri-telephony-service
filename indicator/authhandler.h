@@ -24,7 +24,7 @@
 
 #include <QDBusInterface>
 #include <QVariantMap>
-#include "indicator/NotificationsInterface.h"
+#include "NotificationsInterface.h"
 #include "accountentry.h"
 #include "notificationmenu.h"
 

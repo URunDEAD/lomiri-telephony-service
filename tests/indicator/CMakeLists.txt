@@ -5,6 +5,7 @@ include_directories(
     ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/liblomiritelephonyservice
     ${CMAKE_SOURCE_DIR}/indicator
+    ${CMAKE_BINARY_DIR}/indicator
     ${MESSAGING_MENU_INCLUDE_DIRS}
     ${NOTIFY_INCLUDE_DIRS}
     ${TP_QT5_INCLUDE_DIRS}
