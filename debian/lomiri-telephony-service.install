@@ -14,6 +14,7 @@ usr/share/notify-osd/icons/Humanity/scalable/status/notification-group-call.svg
 usr/share/notify-osd/icons/Humanity/scalable/status/notification-unavailable-image-call.svg
 usr/share/notify-osd/icons/Humanity/scalable/status/notification-unknown-call.svg
 usr/share/polkit-1/actions/*TelephonyService*.policy
+usr/share/polkit-1/rules.d
 usr/share/telepathy/clients/LomiriTelephonyService*.client
 usr/share/lomiri-telephony-service/assets/*
 usr/share/lomiri-telephony-service/protocols/*
