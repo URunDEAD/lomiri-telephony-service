@@ -1,0 +1,13 @@
+// Allow LightDM to read TelephonyServiceApprover fields
+polkit.addRule(function(action, subject) {
+    if (subject.user !== 'lightdm') {
+        return undefined;
+    }
+
+    if (
+        action.id == "com.lomiri.TelephonyServiceApprover.ReadAny" &&
+        (subject.active == true || subject.inactive == true)
+    ) {
+        return polkit.Result.YES;
+    }
+});
