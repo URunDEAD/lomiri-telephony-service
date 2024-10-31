@@ -24,7 +24,7 @@
 
 #include <QDBusInterface>
 #include <QVariantMap>
-#include "indicator/NotificationsInterface.h"
+#include "NotificationsInterface.h"
 #include "ussdmanager.h"
 #include "notificationmenu.h"
 #include "ofonoaccountentry.h"

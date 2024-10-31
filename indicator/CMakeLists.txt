@@ -19,11 +19,15 @@ set_source_files_properties(
         INCLUDE "${CMAKE_SOURCE_DIR}/indicator/DBusTypes.h"
 )
 
+set(notifications-interface_SRCS "")
 qt5_add_dbus_interface(
-        qt_SRCS
+        notifications-interface_SRCS
         "${DATA_DIR}/org.freedesktop.Notifications.xml"
         NotificationsInterface
 )
+add_library(notifications-interface STATIC ${notifications-interface_SRCS})
+target_link_libraries(notifications-interface PUBLIC Qt5::DBus)
+
 qt5_add_dbus_adaptor(qt_SRCS Indicator.xml indicator/indicatordbus.h IndicatorDBus)
 
 set(indicator_SRCS main.cpp ${qt_SRCS})
@@ -50,6 +54,7 @@ target_link_libraries(lomiri-indicator-telephony-service
     ${UserMetrics_LIBRARIES}
     ${HISTORY_LIBRARIES}
     lomiritelephonyservice
+    notifications-interface
     Qt5::Contacts
     Qt5::Core
     Qt5::DBus

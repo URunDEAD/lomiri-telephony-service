@@ -5,6 +5,7 @@ include_directories(
     ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/liblomiritelephonyservice
     ${CMAKE_SOURCE_DIR}/indicator
+    ${CMAKE_BINARY_DIR}/indicator
     ${MESSAGING_MENU_INCLUDE_DIRS}
     ${NOTIFY_INCLUDE_DIRS}
     ${TP_QT5_INCLUDE_DIRS}
@@ -22,15 +23,10 @@ if (NOT ("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "aarch64"))
                                    --ignore-return)
 endif()
 
-qt5_add_dbus_interface(
-        qt_SRCS
-        "${DATA_DIR}/org.freedesktop.Notifications.xml"
-        NotificationsInterface
-)
 generate_telepathy_test(AuthHandlerTest
               SOURCES AuthHandlerTest.cpp ${CMAKE_SOURCE_DIR}/indicator/authhandler.cpp
                       ${CMAKE_SOURCE_DIR}/indicator/notificationmenu.cpp ${qt_SRCS}
-              LIBRARIES ${TP_QT5_LIBRARIES} lomiritelephonyservice mockcontroller telepathytest ${HISTORY_LIBRARIES} ${NOTIFY_LIBRARIES})
+              LIBRARIES ${TP_QT5_LIBRARIES} lomiritelephonyservice notifications-interface mockcontroller telepathytest ${HISTORY_LIBRARIES} ${NOTIFY_LIBRARIES})
 generate_test(NotificationMenuTest
               SOURCES NotificationMenuTest.cpp ${CMAKE_SOURCE_DIR}/indicator/notificationmenu.cpp
               LIBRARIES ${NOTIFY_LIBRARIES} Qt5::Core Qt5::DBus Qt5::Test
