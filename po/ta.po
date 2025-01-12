@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: 2021-01-05 23:26+0000\n"
-"Last-Translator: GK <miscgk@pm.me>\n"
-"Language-Team: Tamil <https://translate.ubports.com/projects/ubports/"
+"PO-Revision-Date: 2025-01-13 20:00+0000\n"
+"Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/ta/>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.11.3\n"
+"X-Generator: Weblate 5.10-dev\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:03+0000\n"
 
 #: indicator/telephony-service-call.desktop.in:4
@@ -140,44 +140,33 @@ msgstr "%1 என்ற குழுவிற்கு %2 - டமிருந�
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
-#, fuzzy, qt-format
-#| msgid "Message to group from %1"
+#, qt-format
 msgid "Message to the group from %1"
-msgstr "குழுவிற்கு %1 - டமிருந்து வந்த குறுஞ்செய்தி"
+msgstr "%1 இலிருந்து குழுவிற்கு செய்தி"
 
 #: indicator/messagingmenu.cpp:345
 msgid "Call back"
 msgstr "பின்னர் அழைக்கவும்"
 
 #: indicator/messagingmenu.cpp:350
-#, fuzzy
-#| msgid "I missed your call - can you call me now?"
 msgid "Missed your call — can you call me now?"
-msgstr "நான் தங்களின் அழைப்பை தவறவிட்டுவிட்டேன். தங்களால் இப்பொழுது அழைக்க முடியுமா?"
+msgstr "உங்கள் அழைப்பைத் தவறவிட்டார் - இப்போது என்னை அழைக்க முடியுமா?"
 
 #: indicator/messagingmenu.cpp:351
-#, fuzzy
-#| msgid "I'm running late. I'm on my way."
 msgid "Running late. On my way."
-msgstr "நான் சற்று தாமதமாகிவிட்டேன். வந்துகொண்டிருக்கிறேன்."
+msgstr "தாமதமாக ஓடுகிறது. என் வழியில்."
 
 #: indicator/messagingmenu.cpp:352
-#, fuzzy
-#| msgid "I'm busy at the moment. I'll call you later."
 msgid "Busy at the moment. Will call you later."
-msgstr "நான் இப்பொழுது வேறொரு வேலையில் ஈடுபட்டுள்ளேன். தங்களுக்கு பின்னர் அழைக்கிறேன்."
+msgstr "இந்த நேரத்தில் பிசியாக. உங்களை பின்னர் அழைப்பார்."
 
 #: indicator/messagingmenu.cpp:353
-#, fuzzy
-#| msgid "I'll be 20 minutes late."
 msgid "I am 20 minutes late."
-msgstr "எனக்கு 20 நிமிடங்கள் தாமதமாகும்."
+msgstr "நான் 20 நிமிடங்கள் தாமதமாக இருக்கிறேன்."
 
 #: indicator/messagingmenu.cpp:354
-#, fuzzy
-#| msgid "Sorry, I'm still busy. I'll call you later."
 msgid "Still busy. Will call you later."
-msgstr "மன்னிக்கவும். இதுவரை வேலை முடியவில்லை. தங்களை பின்னர் அழைக்கிறேன்."
+msgstr "இன்னும் பிசியாக. உங்களை பின்னர் அழைப்பார்."
 
 #: indicator/messagingmenu.cpp:409
 #, qt-format
@@ -301,31 +290,31 @@ msgstr "சேமி"
 
 #: indicator/textchannelobserver.cpp:468
 msgid "Emergency Alert"
-msgstr ""
+msgstr "அவசர எச்சரிக்கை"
 
 #: indicator/textchannelobserver.cpp:471
 msgid "Emergency Alert: Extreme"
-msgstr ""
+msgstr "அவசர எச்சரிக்கை: எக்ச்ட்ரீம்"
 
 #: indicator/textchannelobserver.cpp:474
 msgid "Emergency Alert: Severe"
-msgstr ""
+msgstr "அவசர எச்சரிக்கை: கடுமையான"
 
 #: indicator/textchannelobserver.cpp:477
 msgid "Emergency Alert: Notice"
-msgstr ""
+msgstr "அவசர எச்சரிக்கை: அறிவிப்பு"
 
 #: indicator/textchannelobserver.cpp:482
 msgid "AMBER Alert"
-msgstr ""
+msgstr "அம்பர் எச்சரிக்கை"
 
 #: indicator/textchannelobserver.cpp:485
 msgid "Alert"
-msgstr ""
+msgstr "விழிப்புணர்வு"
 
 #: indicator/textchannelobserver.cpp:531
 msgid "Show alert"
-msgstr ""
+msgstr "எச்சரிக்கையைக் காட்டு"
 
 #: indicator/textchannelobserver.cpp:604
 #, qt-format
@@ -364,10 +353,8 @@ msgstr[1] "உடனிணைப்புகள்: %1 கோப்புக�
 
 #. TRANSLATORS : message displayed when any error occurred while receiving a MMS (case when cellular-data is off, or any downloading issue). Notify that there was a message, the user can find more about it in the messaging-app.
 #: indicator/textchannelobserver.cpp:615
-#, fuzzy
-#| msgid "View message"
 msgid "New MMS message"
-msgstr "குறுஞ்செய்தியைக்க காண்க"
+msgstr "புதிய எம்.எம்.எச் செய்தி"
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/textchannelobserver.cpp:679 indicator/textchannelobserver.cpp:683
@@ -394,38 +381,34 @@ msgstr "தவிர்க்க"
 
 #: libtelephonyservice/callnotification.cpp:53
 msgid "Conf call on hold"
-msgstr ""
+msgstr "கான்ச் அழைப்பு"
 
 #: libtelephonyservice/callnotification.cpp:53
 #, qt-format
 msgid "%1 call on hold"
-msgstr ""
+msgstr "%1 அழைப்பு"
 
 #: libtelephonyservice/callnotification.cpp:56
 msgid "Conf call ended"
-msgstr ""
+msgstr "Conf அழைப்பு முடிந்தது"
 
 #: libtelephonyservice/callnotification.cpp:56
 #, qt-format
 msgid "%1 call ended"
-msgstr ""
+msgstr "%1 அழைப்பு முடிந்தது"
 
 #: libtelephonyservice/callnotification.cpp:59
 #, qt-format
 msgid "%1 call declined"
-msgstr ""
+msgstr "%1 அழைப்பு குறைந்தது"
 
 #: libtelephonyservice/contactwatcher.cpp:157
-#, fuzzy
-#| msgid "Private number"
 msgid "Private Number"
-msgstr "தனியார் எண்"
+msgstr "தனிப்பட்ட எண்"
 
 #: libtelephonyservice/contactwatcher.cpp:159
-#, fuzzy
-#| msgid "Unknown number"
 msgid "Unknown Number"
-msgstr "தெறியாத எண்"
+msgstr "தெரியாத எண்"
 
 #, fuzzy
 #~| msgid "Telephony Service"
