@@ -1,8 +1,10 @@
-lomiri-telephony-service (0.6.0~a) UNRELEASED; urgency=medium
+lomiri-telephony-service (0.6.0) unstable; urgency=medium
 
   * Renamed to lomiri-telephony-service
+  * Upstream-provided Debian package for lomiri-telephony-service. See
+    upstream ChangeLog for recent changes.
 
- -- UBports developers <developers@ubports.com>  Thu, 28 Dec 2023 08:07:11 +0100
+ -- UBports developers <developers@ubports.com>  Mon, 13 Jan 2025 09:43:58 +0100
 
 telephony-service (0.5.3) unstable; urgency=medium
 

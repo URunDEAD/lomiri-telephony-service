@@ -1,6 +1,166 @@
+2025-01-13 Mike Gabriel
+
+        * Release 0.6.0 (HEAD -> main, tag: 0.6.0)
+
+2024-12-28 Hosted Weblate
+
+        * Update translation files (ac87110a)
+
+2024-10-31 Ratchanan Srirattanamet
+
+        * Merge branch 'fix/notifications-interface-linking' into 'main'
+          (9533ce1a)
+
+2024-10-31 OPNA2608
+
+        * indicator/ussdindicator.h: Include NotificationsInterface.h from
+          ${CMAKE_BINARY_DIR}/indicator (083deddf)
+
+2024-10-30 OPNA2608
+
+        * indicator/CMakeLists.txt: Separate out NotificationsInterface
+          (087b2e2c)
+
+2024-10-19 Mike Gabriel
+
+        * indicator/authhandler.h: Correctly include NotificationsInterface.h
+          from ${CMAKE_BINARY_DIR}/indicator. (3e749379)
+
+2024-10-25 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/sunweaver/qml-module-pkg-names' into 'main'
+          (c894f813)
+
+2024-10-20 Mike Gabriel
+
+        * debian/changelog: Append ~a to upstream version to assure upgrade
+          path in UBports repo (nasty hack, but required).
+          (2774fecb)
+
+2024-10-19 Mike Gabriel
+
+        * debian/: Drop '0.1' from QML module bin:pkg names. (9111ebb9)
+
+2024-10-20 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/sunweaver/pokit-pkla2rules' into 'main'
+          (d37d8ead)
+
+2024-10-19 Mike Gabriel
+
+        * debian/lomiri-telephony-service.install: Update to install
+          policykit rule file
+          50-com.lomiri.TelephonyServiceApprover.rules. (e9e6af6b)
+        * Port approver/50-com.lomiri.TelephonyServiceApprover.pkla to
+          approver/50-com.lomiri.TelephonyServiceApprover.rules.
+          (151591c4)
+
+2024-09-15 Mike Gabriel
+
+        * Merge branch 'add/optionalTesting' into 'main' (18d87bc3)
+
+2024-01-01 OPNA2608
+
+        * CMakeLists: Make tests optional (1520a6a8)
+
+2024-09-14 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/handsfree_head_unit' into 'main'
+          (3272a26f)
+
+2024-09-10 Ratchanan Srirattanamet
+
+        * qpulseaudioengine: add support for dedicated HFP profile (3830c786)
+
+2024-09-10 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/fix-tests-on-debian' into 'main'
+          (3510e407)
+
+2024-09-10 Ratchanan Srirattanamet
+
+        * d/control: B-Ds on xauth to fix running tests on Debian (621103c2)
+
+2024-08-15 Mike Gabriel
+
+        * Merge branch 'personal/gberh/fix-gitignore' into 'main' (7de6d10c)
+
+2024-08-15 Guido Berhoerster
+
+        * .gitignore: Do not exclude
+          tests/common/dbus-services/CMakeLists.txt (75ef21ef)
+
+2024-08-12 umesaburo sagawa
+
+        * Translated using Weblate (Japanese) (43537c9c)
+
+2024-08-06 umesaburo sagawa
+
+        * Translated using Weblate (Japanese) (c26d3c27)
+
+2024-07-22 Jiri Grönroos
+
+        * Translated using Weblate (Finnish) (9d05193b)
+
+2024-07-13 Joan CiberSheep
+
+        * Translated using Weblate (Catalan) (64703c15)
+
+2024-05-29 Ali Beyaz
+
+        * Translated using Weblate (Turkish) (ee43bae1)
+
+2024-05-21 Mike Gabriel
+
+        * Merge branch 'ubports/focal_-_lomiri-renaming' into 'main'
+          (b218f24e)
+
+2024-05-21 Ratchanan Srirattanamet
+
+        * tst_phoneNumber*: fix test data for newer libphonenumber (5a1fbd61)
+
+2024-05-20 Ratchanan Srirattanamet
+
+        * debian/: add session-migration script for greeter data directory
+          rename (343de070)
+        * debian/: drop the use of dh_translations (53b69bc6)
+
+2023-12-28 Guido Berhoerster
+
+        * Update .pot file (e7b9176d)
+
+2023-12-27 Guido Berhoerster
+
+        * Rename telephony-service to lomiri-telephony-service (954ce975)
+
+2024-05-04 phlostically
+
+        * Translated using Weblate (Esperanto) (4a264ccf)
+
+2024-05-02 Mike Gabriel
+
+        * Merge branch 'personal/sunweaver/libintl-h-drop-C-namespace' into
+          'main' (bd5f78c8)
+
+2024-04-16 Mike Gabriel
+
+        * CMakeLists.txt: pkgconf module name changed: history-service ->
+          lomiri-history-service. (3a387670)
+        * d/control: Update B-D: libhistoryservice-dev ->
+          liblomirihistoryservice-dev. (4e54d716)
+        * d/control: Update B-D: libusermetricsinput1-dev ->
+          libusermetricsinput-dev. (0da0de3d)
+        * d/control: Drop from B-D: qt5-defaults. (c0bcebbf)
+        * libintl.h: Include into :: namespace rather than C:: namespace.
+          (18e0ba8e)
+
+2024-04-18 复予
+
+        * Translated using Weblate (Chinese (Simplified)) (450f99ad)
+
 2024-01-28 Mike Gabriel
 
-        * Release 0.5.3 (HEAD -> main, tag: 0.5.3)
+        * Release 0.5.3 (9e3be1ed) (tag: 0.5.3)
 
 2024-01-04 Mike Gabriel
 

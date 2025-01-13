@@ -45,8 +45,8 @@ Architecture: any
 Multi-Arch: foreign
 Conflicts: phone-app
 Replaces: phone-app,
-          telephony-service (<< 0.6.0~a~)
-Breaks: telephony-service (<< 0.6.0~a~)
+          telephony-service (<< 0.6.0~)
+Breaks: telephony-service (<< 0.6.0~)
 Provides: telephony-service (= ${binary:Version})
 Depends: lomiri-schemas,
          history-service,
@@ -85,8 +85,8 @@ Depends: lomiri-schemas,
          ${misc:Depends},
          ${shlibs:Depends},
 Suggests: telepathy-ofono
-Breaks: qml-module-lomiri-telephony0.1 (<< 0.6.0~a~),
-Replaces: qml-module-lomiri-telephony0.1 (<< 0.6.0~a~),
+Breaks: qml-module-lomiri-telephony0.1 (<< 0.6.0~),
+Replaces: qml-module-lomiri-telephony0.1 (<< 0.6.0~),
 Description: Telephony service components for Lomiri - QML plugin
  Telephony service components for Lomiri.
  .
@@ -113,8 +113,8 @@ Multi-Arch: same
 Depends: ${misc:Depends},
          ${shlibs:Depends},
          qml-module-lomiri-components
-Breaks: qml-module-lomiri-telephony-phonenumber0.1 (<< 0.6.0~a~),
-Replaces: qml-module-lomiri-telephony-phonenumber0.1 (<< 0.6.0~a~),
+Breaks: qml-module-lomiri-telephony-phonenumber0.1 (<< 0.6.0~),
+Replaces: qml-module-lomiri-telephony-phonenumber0.1 (<< 0.6.0~),
 Description: Telephony PhoneNumber components for Lomiri - QML plugin
  Telephony PhoneNumber components for Lomiri.
  .
