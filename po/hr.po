@@ -8,17 +8,18 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: 2015-10-16 10:35+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Croatian <hr@li.org>\n"
+"PO-Revision-Date: 2025-02-04 07:51+0000\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Language-Team: Croatian <https://hosted.weblate.org/projects/lomiri/"
+"telephony-service/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.10-dev\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:03+0000\n"
-"X-Generator: Launchpad (build 18298)\n"
 
 #: indicator/telephony-service-call.desktop.in:4
 msgid "Phone Calls"
@@ -134,18 +135,17 @@ msgstr "Pošalji"
 #: indicator/textchannelobserver.cpp:675
 #, qt-format
 msgid "Message to %1 from %2"
-msgstr ""
+msgstr "Poruka u grupu %1 od %2"
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
-#, fuzzy, qt-format
-#| msgid "Message to group from %1"
+#, qt-format
 msgid "Message to the group from %1"
-msgstr "Grupna poruka od %1"
+msgstr "Poruka u grupu od %1"
 
 #: indicator/messagingmenu.cpp:345
 msgid "Call back"
-msgstr "Uzvrati poziv"
+msgstr "Povratni poziv"
 
 #: indicator/messagingmenu.cpp:350
 #, fuzzy
@@ -204,38 +204,38 @@ msgstr "Govorna pošta"
 #: indicator/metrics.cpp:42
 #, qt-format
 msgid "<b>%1</b> text messages sent today"
-msgstr "<b>%1</b> danas poslane poruke"
+msgstr "<b>%1</b> danas poslane tekstualne poruke"
 
 #: indicator/metrics.cpp:43
 msgid "No text messages sent today"
-msgstr "Danas nema poslanih poruka"
+msgstr "Danas nema poslanih tekstualnih poruka"
 
 #: indicator/metrics.cpp:44
 #, qt-format
 msgid "<b>%1</b> text messages received today"
-msgstr "<b>%1</b> danas primljene poruke"
+msgstr "<b>%1</b> danas primljene tekstualne poruke"
 
 #: indicator/metrics.cpp:45
 msgid "No text messages received today"
-msgstr "Danas nema primljenih poruka"
+msgstr "Danas nema primljenih tekstualnih poruka"
 
 #: indicator/metrics.cpp:46
 #, qt-format
 msgid "<b>%1</b> calls received today"
-msgstr "<b>%1</b> jučerašnji pozivi"
+msgstr "<b>%1</b> danas primljenih poziva"
 
 #: indicator/metrics.cpp:47
 msgid "No calls received today"
-msgstr "Danas nema dolaznih poziva"
+msgstr "Danas nema primljenih poziva"
 
 #: indicator/metrics.cpp:48
 #, qt-format
 msgid "<b>%1</b> calls made today"
-msgstr "<b>%1</b> današnji pozivi"
+msgstr "<b>%1</b> danas odlaznih poziva"
 
 #: indicator/metrics.cpp:49 indicator/metrics.cpp:51
 msgid "No calls made today"
-msgstr "Danas nema ostvarenih poziva"
+msgstr "Danas nisi nikoga nazvao/la"
 
 #: indicator/metrics.cpp:50
 #, qt-format
@@ -255,7 +255,7 @@ msgstr ""
 
 #: indicator/textchannelobserver.cpp:230
 msgid "Try again from the messaging application."
-msgstr "Pokušajte kasnije iz aplikacije za poruke"
+msgstr "Pokušajte kasnije iz aplikacije za poruke."
 
 #: indicator/textchannelobserver.cpp:236
 msgid "The message could not be sent"
@@ -267,7 +267,7 @@ msgstr "Pogledaj poruku"
 
 #: indicator/textchannelobserver.cpp:295
 msgid "New Group"
-msgstr ""
+msgstr "Nova grupa"
 
 #. TRANSLATORS : %1 is the group name
 #: indicator/textchannelobserver.cpp:302
@@ -287,7 +287,7 @@ msgstr ""
 
 #: indicator/textchannelobserver.cpp:328
 msgid "View Group"
-msgstr ""
+msgstr "Pogledaj grupu"
 
 #: indicator/textchannelobserver.cpp:367 indicator/ussdindicator.cpp:116
 msgid "Ok"
@@ -299,31 +299,31 @@ msgstr "Spremi"
 
 #: indicator/textchannelobserver.cpp:468
 msgid "Emergency Alert"
-msgstr ""
+msgstr "Uzbuna u hitnim slučajevima"
 
 #: indicator/textchannelobserver.cpp:471
 msgid "Emergency Alert: Extreme"
-msgstr ""
+msgstr "Uzbuna u hitnim slučajevima: Ekstremno"
 
 #: indicator/textchannelobserver.cpp:474
 msgid "Emergency Alert: Severe"
-msgstr ""
+msgstr "Uzbuna u hitnim slučajevima: Opasno"
 
 #: indicator/textchannelobserver.cpp:477
 msgid "Emergency Alert: Notice"
-msgstr ""
+msgstr "Uzbuna u hitnim slučajevima: Obavijest"
 
 #: indicator/textchannelobserver.cpp:482
 msgid "AMBER Alert"
-msgstr ""
+msgstr "Uzbuna potrage za djetetom"
 
 #: indicator/textchannelobserver.cpp:485
 msgid "Alert"
-msgstr ""
+msgstr "Uzbuna"
 
 #: indicator/textchannelobserver.cpp:531
 msgid "Show alert"
-msgstr ""
+msgstr "Pokaži uzbunu"
 
 #: indicator/textchannelobserver.cpp:604
 #, qt-format
@@ -367,10 +367,8 @@ msgstr[2] "Privitci: %1 datoteka"
 
 #. TRANSLATORS : message displayed when any error occurred while receiving a MMS (case when cellular-data is off, or any downloading issue). Notify that there was a message, the user can find more about it in the messaging-app.
 #: indicator/textchannelobserver.cpp:615
-#, fuzzy
-#| msgid "View message"
 msgid "New MMS message"
-msgstr "Pogledaj poruku"
+msgstr "Nova MMS poruka"
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/textchannelobserver.cpp:679 indicator/textchannelobserver.cpp:683
@@ -420,7 +418,7 @@ msgstr ""
 
 #: libtelephonyservice/contactwatcher.cpp:157
 msgid "Private Number"
-msgstr "Privatni broj"
+msgstr "Privatan broj"
 
 #: libtelephonyservice/contactwatcher.cpp:159
 msgid "Unknown Number"
