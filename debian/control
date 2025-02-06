@@ -49,7 +49,7 @@ Replaces: phone-app,
 Breaks: telephony-service (<< 0.6.0~)
 Provides: telephony-service (= ${binary:Version})
 Depends: lomiri-schemas,
-         history-service,
+         lomiri-history-service,
          libnotify4,
          telepathy-mission-control-5,
          lomiri-sounds,
