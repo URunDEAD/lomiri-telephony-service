@@ -1,6 +1,36 @@
+2025-05-05 Mike Gabriel
+
+        * Release 0.6.1 (HEAD -> main, tag: 0.6.1)
+
+2025-04-16 Mike Gabriel
+
+        * Merge branch 'fix/broken-translations-issue-72' into 'main'
+          (492ceb96)
+
+2025-04-16 Cedric CHEDALEUX
+
+        * i18n: fix broken translations (6e3c117a)
+
+2025-02-07 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/cleanup-transitional' into
+          'main' (bc3c8950)
+
+2025-02-07 Ratchanan Srirattanamet
+
+        * d/control: follow rename { => lomiri-}history-service (a07e3065)
+
+2025-02-03 Milo Ivir
+
+        * Translated using Weblate (Croatian) (95c3f822)
+
+2025-01-12 தமிழ்நேரம்
+
+        * Translated using Weblate (Tamil) (8b4a48f4)
+
 2025-01-13 Mike Gabriel
 
-        * Release 0.6.0 (HEAD -> main, tag: 0.6.0)
+        * Release 0.6.0 (e7d68aa4) (tag: 0.6.0)
 
 2024-12-28 Hosted Weblate
 

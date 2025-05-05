@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(lomiri-telephony-service VERSION 0.6.0 LANGUAGES CXX)
+project(lomiri-telephony-service VERSION 0.6.1 LANGUAGES CXX)
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
 
 # Standard install paths
