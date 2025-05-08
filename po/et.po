@@ -8,14 +8,16 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-05-10 18:00+0000\n"
+"Last-Translator: Priit Jõerüüt <hwlate@joeruut.com>\n"
+"Language-Team: Estonian <https://hosted.weblate.org/projects/lomiri/"
+"telephony-service/et/>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #: indicator/telephony-service-call.desktop.in:4
 msgid "Phone Calls"
@@ -244,55 +246,55 @@ msgstr ""
 
 #: indicator/textchannelobserver.cpp:249 indicator/textchannelobserver.cpp:713
 msgid "View message"
-msgstr ""
+msgstr "Vaata sõnumit"
 
 #: indicator/textchannelobserver.cpp:295
 msgid "New Group"
-msgstr ""
+msgstr "Uus grupp"
 
 #. TRANSLATORS : %1 is the group name
 #: indicator/textchannelobserver.cpp:302
 #, qt-format
 msgid "You joined group %1 "
-msgstr ""
+msgstr "Liitusid grupiga: %1 "
 
 #. TRANSLATORS : %1 is the group name
 #: indicator/textchannelobserver.cpp:306
 #, qt-format
 msgid "You joined group %1"
-msgstr ""
+msgstr "Liitusid grupiga: %1"
 
 #: indicator/textchannelobserver.cpp:309
 msgid "You joined a new group"
-msgstr ""
+msgstr "Sa liitusid uue grupiga"
 
 #: indicator/textchannelobserver.cpp:328
 msgid "View Group"
-msgstr ""
+msgstr "Vaata gruppi"
 
 #: indicator/textchannelobserver.cpp:367 indicator/ussdindicator.cpp:116
 msgid "Ok"
-msgstr ""
+msgstr "Sobib"
 
 #: indicator/textchannelobserver.cpp:373
 msgid "Save"
-msgstr ""
+msgstr "Salvesta"
 
 #: indicator/textchannelobserver.cpp:468
 msgid "Emergency Alert"
-msgstr ""
+msgstr "Eriolukorra teadeanne"
 
 #: indicator/textchannelobserver.cpp:471
 msgid "Emergency Alert: Extreme"
-msgstr ""
+msgstr "Eriolukorra teadeanne: ülioluline"
 
 #: indicator/textchannelobserver.cpp:474
 msgid "Emergency Alert: Severe"
-msgstr ""
+msgstr "Eriolukorra teadeanne: väga tõsine"
 
 #: indicator/textchannelobserver.cpp:477
 msgid "Emergency Alert: Notice"
-msgstr ""
+msgstr "Eriolukorra teadeanne: hoiatus"
 
 #: indicator/textchannelobserver.cpp:482
 msgid "AMBER Alert"
