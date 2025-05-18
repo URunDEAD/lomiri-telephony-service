@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: 2023-02-07 09:55+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2025-05-18 15:49+0000\n"
+"Last-Translator: Ida Brenna <ida@larald.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/nb_NO/>\n"
 "Language: nb\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:03+0000\n"
 
 #: indicator/telephony-service-call.desktop.in:4
@@ -138,42 +138,31 @@ msgstr "Melding til %1 fra %2"
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
-#, fuzzy, qt-format
-#| msgid "Message to group from %1"
+#, qt-format
 msgid "Message to the group from %1"
-msgstr "Melding til gruppe fra %1"
+msgstr "Melding til gruppen fra %1"
 
 #: indicator/messagingmenu.cpp:345
 msgid "Call back"
 msgstr "Ring tilbake"
 
 #: indicator/messagingmenu.cpp:350
-#, fuzzy
-#| msgid "I missed your call - can you call me now?"
 msgid "Missed your call — can you call me now?"
 msgstr "Fikk ikke tatt telefonen. Kan du ringe meg nå?"
 
 #: indicator/messagingmenu.cpp:351
-#, fuzzy
-#| msgid "I'm running late. I'm on my way."
 msgid "Running late. On my way."
 msgstr "Jeg blir noe forsinket. Er på vei."
 
 #: indicator/messagingmenu.cpp:352
-#, fuzzy
-#| msgid "I'm busy at the moment. I'll call you later."
 msgid "Busy at the moment. Will call you later."
 msgstr "Jeg er opptatt akkurat nå. Ringer deg senere."
 
 #: indicator/messagingmenu.cpp:353
-#, fuzzy
-#| msgid "I'll be 20 minutes late."
 msgid "I am 20 minutes late."
 msgstr "Jeg blir 20 minutter forsinket."
 
 #: indicator/messagingmenu.cpp:354
-#, fuzzy
-#| msgid "Sorry, I'm still busy. I'll call you later."
 msgid "Still busy. Will call you later."
 msgstr "Beklager, men jeg er fortsatt opptatt. Ringer deg senere."
 
@@ -297,7 +286,6 @@ msgid "Emergency Alert"
 msgstr "Nødalarm"
 
 #: indicator/textchannelobserver.cpp:471
-#, fuzzy
 msgid "Emergency Alert: Extreme"
 msgstr "Nødalarm: Ekstrem"
 
@@ -310,7 +298,6 @@ msgid "Emergency Alert: Notice"
 msgstr "Nødalarm: Merknad"
 
 #: indicator/textchannelobserver.cpp:482
-#, fuzzy
 msgid "AMBER Alert"
 msgstr "Savnet person"
 
@@ -359,10 +346,8 @@ msgstr[1] "Vedlegg: %1 filer"
 
 #. TRANSLATORS : message displayed when any error occurred while receiving a MMS (case when cellular-data is off, or any downloading issue). Notify that there was a message, the user can find more about it in the messaging-app.
 #: indicator/textchannelobserver.cpp:615
-#, fuzzy
-#| msgid "View message"
 msgid "New MMS message"
-msgstr "Vis melding"
+msgstr "Ny MMS-melding"
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/textchannelobserver.cpp:679 indicator/textchannelobserver.cpp:683
