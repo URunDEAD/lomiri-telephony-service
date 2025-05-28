@@ -22,7 +22,6 @@
 
 #include "metrics.h"
 #include <QDebug>
-#include <libintl.h>
 
 const QString APP_ID = QString("lomiri-telephony-service");
 const QString MESSAGES_RECEIVED_STATISTICS_ID = QString("text-messages-received");
@@ -31,7 +30,7 @@ const QString DIALER_INCOMING_STATISTICS_ID = QString("dialer-calls-incoming");
 const QString DIALER_OUTGOING_STATISTICS_ID = QString("dialer-calls-outgoing");
 const QString DIALER_CALL_DURATION_STATISTICS_ID = QString("dialer-calls-duration");
 
-#define GettextMarkExtraction(x) gettext(x)
+#define GettextMarkExtraction(x) x
 
 using namespace UserMetricsInput;
 
