@@ -29,11 +29,11 @@ msgstr "Tin nhắn SMS"
 
 #: approver/approver.cpp:66
 msgid "Unknown caller"
-msgstr "Cuộc gọi không xác định"
+msgstr "Người gọi không xác định"
 
 #: approver/approver.cpp:94
 msgid "I'm busy at the moment. I'll call later."
-msgstr ""
+msgstr "Tôi đang bận bây giờ, tôi sẽ gọi sau."
 
 #: approver/approver.cpp:95
 msgid "I'm running late, on my way now."
