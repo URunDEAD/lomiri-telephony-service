@@ -389,7 +389,7 @@ void Approver::onHangUpAndApproved(Tp::ChannelDispatchOperationPtr dispatchOp)
     dispatchOp->handleWith(TELEPHONY_SERVICE_HANDLER);
 
     // and then launch the dialer-app
-    ApplicationUtils::openUrl(QUrl("application:///dialer-app.desktop"));
+    ApplicationUtils::openUrl(QUrl("application:///lomiri-dialer-app.desktop"));
 
     mDispatchOps.removeAll(dispatchOp);
 }
