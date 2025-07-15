@@ -55,146 +55,146 @@ msgstr "Số điện thoại riêng"
 #: approver/approver.cpp:464 indicator/messagingmenu.cpp:244
 #: indicator/messagingmenu.cpp:418 indicator/textchannelobserver.cpp:640
 msgid "Unknown number"
-msgstr "Số không xác định"
+msgstr "Số điện thoại không xác định"
 
 #: approver/approver.cpp:470 approver/approver.cpp:485
 msgid "Caller number is not available"
-msgstr "Số người gọi không có sẵn"
+msgstr "S.đ.t người gọi không có sẵn"
 
 #: approver/approver.cpp:476
 msgid "Calling from private number"
-msgstr "Đang gọi qua số điện thoại riêng"
+msgstr "Gọi qua số điện thoại riêng"
 
 #: approver/approver.cpp:479
 msgid "Calling from unknown number"
-msgstr "Đang gọi từ s.đ.t không xác định"
+msgstr "Gọi từ s.đ.t không xác định"
 
 #: approver/approver.cpp:482
 #, qt-format
 msgid "Calling from %1"
-msgstr ""
+msgstr "Gọi từ %1"
 
 #: approver/approver.cpp:529
 msgid "Hold + Answer"
-msgstr ""
+msgstr "Giữ + Trả lời"
 
 #: approver/approver.cpp:530
 msgid "Accept"
-msgstr ""
+msgstr "Chấp nhận"
 
 #: approver/approver.cpp:543
 msgid "End + Answer"
-msgstr ""
+msgstr "Kết thúc + Trả lời"
 
 #: approver/approver.cpp:552
 msgid "Decline"
-msgstr ""
+msgstr "Từ chối"
 
 #: approver/approver.cpp:560
 msgid "Message & decline"
-msgstr ""
+msgstr "Nhắn tin & từ chối"
 
 #: approver/main.cpp:46
 msgid "Telephony Service Approver"
-msgstr ""
+msgstr "Người phê duyệt dịch vụ điện thoại"
 
 #: indicator/authhandler.cpp:72
 msgid "Authentication failed. Do you want to review your credentials?"
 msgstr ""
+"Xác thực thất bại. Bạn có muốn xem lại thông tin xác thực của mình không?"
 
 #: indicator/authhandler.cpp:91
 msgid "Yes"
-msgstr ""
+msgstr "Có"
 
 #: indicator/authhandler.cpp:94
 msgid "No"
-msgstr ""
+msgstr "Không"
 
 #: indicator/displaynamesettings.cpp:35
 #, qt-format
 msgid "SIM %1"
-msgstr ""
+msgstr "SIM %1"
 
 #: indicator/main.cpp:53
 msgid "Telephony Service Indicator"
-msgstr ""
+msgstr "Trạng thái dịch vụ điện thoại"
 
 #: indicator/messagingmenu.cpp:83 indicator/messagingmenu.cpp:87
 msgid "Telephony Service"
-msgstr ""
+msgstr "Dịch vụ điện thoại"
 
 #: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
 #: indicator/messagingmenu.cpp:360
 msgid "Send"
-msgstr ""
+msgstr "Gửi"
 
 #. TRANSLATORS : %1 is the group name and %2 is the recipient name
 #: indicator/messagingmenu.cpp:262 indicator/textchannelobserver.cpp:671
 #: indicator/textchannelobserver.cpp:675
 #, qt-format
 msgid "Message to %1 from %2"
-msgstr ""
+msgstr "Nhắn tin đến %1 từ %2"
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
 #, qt-format
 msgid "Message to the group from %1"
-msgstr ""
+msgstr "Nhắn tin cho nhóm từ %1"
 
 #: indicator/messagingmenu.cpp:345
 msgid "Call back"
-msgstr ""
+msgstr "Gọi lại"
 
 #: indicator/messagingmenu.cpp:350
 msgid "Missed your call — can you call me now?"
 msgstr ""
+"Tôi đã nhỡ cuộc gọi của bạn — bạn có thể gọi lại tôi bây giờ được không?"
 
 #: indicator/messagingmenu.cpp:351
 msgid "Running late. On my way."
-msgstr ""
+msgstr "Đang bị trễ/muộn. Đang trên đường tới."
 
 #: indicator/messagingmenu.cpp:352
 msgid "Busy at the moment. Will call you later."
-msgstr ""
+msgstr "Hiện tại tôi đang bận. Tôi sẽ gọi lại cho bạn sau."
 
 #: indicator/messagingmenu.cpp:353
 msgid "I am 20 minutes late."
-msgstr ""
+msgstr "Tôi đến muộn 20 phút."
 
 #: indicator/messagingmenu.cpp:354
 msgid "Still busy. Will call you later."
-msgstr ""
+msgstr "Vẫn đang bận đây. Sẽ gọi lại bạn sau."
 
 #: indicator/messagingmenu.cpp:409
 #, qt-format
 msgid "%1 missed call"
 msgid_plural "%1 missed calls"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 cuộc gọi nhỡ"
 
 #: indicator/messagingmenu.cpp:492
 msgid "Voicemail messages"
-msgstr ""
+msgstr "Tin nhắn thư thoại"
 
 #: indicator/messagingmenu.cpp:495
 #, qt-format
 msgid "%1 voicemail message"
 msgid_plural "%1 voicemail messages"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 tin nhắn thư thoại"
 
 #: indicator/messagingmenu.cpp:500
 msgid "Voicemail"
-msgstr ""
+msgstr "Thư thoại"
 
 #: indicator/metrics.cpp:42
 #, qt-format
 msgid "<b>%1</b> text messages sent today"
-msgstr ""
+msgstr "<b>%1</b> tin nhắn văn bản đã được gửi hôm nay"
 
 #: indicator/metrics.cpp:43
 msgid "No text messages sent today"
-msgstr ""
+msgstr "Không có tin nhắn đã được gửi hôm nay"
 
 #: indicator/metrics.cpp:44
 #, qt-format
