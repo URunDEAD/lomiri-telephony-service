@@ -238,166 +238,161 @@ msgstr "Tắt kích hoạt chế độ bay và thử lại từ ứng dụng Nh�
 
 #: indicator/textchannelobserver.cpp:230
 msgid "Try again from the messaging application."
-msgstr "Thử lại từ ứng dụng Nhắn tin"
+msgstr "Thử lại từ ứng dụng Nhắn tin."
 
 #: indicator/textchannelobserver.cpp:236
 msgid "The message could not be sent"
-msgstr ""
+msgstr "Không thể gửi tin nhắn"
 
 #: indicator/textchannelobserver.cpp:249 indicator/textchannelobserver.cpp:713
 msgid "View message"
-msgstr ""
+msgstr "Xem tin nhắn"
 
 #: indicator/textchannelobserver.cpp:295
 msgid "New Group"
-msgstr ""
+msgstr "Tạo nhóm mới"
 
 #. TRANSLATORS : %1 is the group name
 #: indicator/textchannelobserver.cpp:302
 #, qt-format
 msgid "You joined group %1 "
-msgstr ""
+msgstr "Bạn đã tham gia nhóm %1 "
 
 #. TRANSLATORS : %1 is the group name
 #: indicator/textchannelobserver.cpp:306
 #, qt-format
 msgid "You joined group %1"
-msgstr ""
+msgstr "Bạn đã tham gia nhóm %1"
 
 #: indicator/textchannelobserver.cpp:309
 msgid "You joined a new group"
-msgstr ""
+msgstr "Bạn đã tham gia nhóm mới"
 
 #: indicator/textchannelobserver.cpp:328
 msgid "View Group"
-msgstr ""
+msgstr "Xem nhóm"
 
 #: indicator/textchannelobserver.cpp:367 indicator/ussdindicator.cpp:116
 msgid "Ok"
-msgstr ""
+msgstr "Ô kê"
 
 #: indicator/textchannelobserver.cpp:373
 msgid "Save"
-msgstr ""
+msgstr "Lưu"
 
 #: indicator/textchannelobserver.cpp:468
 msgid "Emergency Alert"
-msgstr ""
+msgstr "Cảnh báo khẩn cấp"
 
 #: indicator/textchannelobserver.cpp:471
 msgid "Emergency Alert: Extreme"
-msgstr ""
+msgstr "Cảnh báo khẩn cấp: Cực kỳ"
 
 #: indicator/textchannelobserver.cpp:474
 msgid "Emergency Alert: Severe"
-msgstr ""
+msgstr "Cảnh báo khẩn cấp: Nghiêm trọng"
 
 #: indicator/textchannelobserver.cpp:477
 msgid "Emergency Alert: Notice"
-msgstr ""
+msgstr "Cảnh báo khẩn cấp: Thông báo"
 
 #: indicator/textchannelobserver.cpp:482
 msgid "AMBER Alert"
-msgstr ""
+msgstr "Cảnh báo AMBER"
 
 #: indicator/textchannelobserver.cpp:485
 msgid "Alert"
-msgstr ""
+msgstr "Cảnh báo"
 
 #: indicator/textchannelobserver.cpp:531
 msgid "Show alert"
-msgstr ""
+msgstr "Hiển thị cảnh báo"
 
 #: indicator/textchannelobserver.cpp:604
 #, qt-format
 msgid "Attachment: %1 image"
 msgid_plural "Attachments: %1 images"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Đính kèm: %1 ảnh"
 
 #: indicator/textchannelobserver.cpp:606
 #, qt-format
 msgid "Attachment: %1 video"
 msgid_plural "Attachments: %1 videos"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Đính kèm: %1 video"
 
 #: indicator/textchannelobserver.cpp:608
 #, qt-format
 msgid "Attachment: %1 contact"
 msgid_plural "Attachments: %1 contacts"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Đính kèm: %1 danh bạ"
 
 #: indicator/textchannelobserver.cpp:610
 #, qt-format
 msgid "Attachment: %1 audio clip"
 msgid_plural "Attachments: %1 audio clips"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Đính kèm: %1 đoạn âm thanh"
 
 #: indicator/textchannelobserver.cpp:612
 #, qt-format
 msgid "Attachment: %1 file"
 msgid_plural "Attachments: %1 files"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Đính kèm: %1 tệp"
 
 #. TRANSLATORS : message displayed when any error occurred while receiving a MMS (case when cellular-data is off, or any downloading issue). Notify that there was a message, the user can find more about it in the messaging-app.
 #: indicator/textchannelobserver.cpp:615
 msgid "New MMS message"
-msgstr ""
+msgstr "Tin nhắn MMS mới"
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/textchannelobserver.cpp:679 indicator/textchannelobserver.cpp:683
 #, qt-format
 msgid "Message to group from %1"
-msgstr ""
+msgstr "Nhắn tin đến nhóm từ %1"
 
 #: indicator/textchannelobserver.cpp:749
 #, qt-format
 msgid "Message from %1"
-msgstr ""
+msgstr "Nhắn tin từ %1"
 
 #: indicator/textchannelobserver.cpp:910
 msgid "Please, select a SIM card:"
-msgstr ""
+msgstr "Vui lòng chọn thẻ SIM:"
 
 #: indicator/ussdindicator.cpp:119
 msgid "Reply"
-msgstr ""
+msgstr "Trả lời"
 
 #: indicator/ussdindicator.cpp:142
 msgid "Cancel"
-msgstr ""
+msgstr "Hủy bỏ"
 
 #: libtelephonyservice/callnotification.cpp:53
 msgid "Conf call on hold"
-msgstr ""
+msgstr "Cuộc gọi hội nghị đang chờ"
 
 #: libtelephonyservice/callnotification.cpp:53
 #, qt-format
 msgid "%1 call on hold"
-msgstr ""
+msgstr "%1 cuộc gọi đang chờ"
 
 #: libtelephonyservice/callnotification.cpp:56
 msgid "Conf call ended"
-msgstr ""
+msgstr "Cuộc gọi hội nghị đã kết thúc"
 
 #: libtelephonyservice/callnotification.cpp:56
 #, qt-format
 msgid "%1 call ended"
-msgstr ""
+msgstr "%1 cuộc gọi đã kết thúc"
 
 #: libtelephonyservice/callnotification.cpp:59
 #, qt-format
 msgid "%1 call declined"
-msgstr ""
+msgstr "%1 cuộc gọi bị từ chối"
 
 #: libtelephonyservice/contactwatcher.cpp:157
 msgid "Private Number"
-msgstr ""
+msgstr "Số điện thoại riêng"
 
 #: libtelephonyservice/contactwatcher.cpp:159
 msgid "Unknown Number"
-msgstr ""
+msgstr "S.đ.t không xác định"
