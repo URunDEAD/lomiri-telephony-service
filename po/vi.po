@@ -190,7 +190,7 @@ msgstr "Thư thoại"
 #: indicator/metrics.cpp:42
 #, qt-format
 msgid "<b>%1</b> text messages sent today"
-msgstr "<b>%1</b> tin nhắn văn bản đã được gửi hôm nay"
+msgstr "<b>%1</b> tin nhắn đã được gửi hôm nay"
 
 #: indicator/metrics.cpp:43
 msgid "No text messages sent today"
@@ -199,38 +199,38 @@ msgstr "Không có tin nhắn đã được gửi hôm nay"
 #: indicator/metrics.cpp:44
 #, qt-format
 msgid "<b>%1</b> text messages received today"
-msgstr ""
+msgstr "<b>%1</b> tin nhắn đã được nhận hôm nay"
 
 #: indicator/metrics.cpp:45
 msgid "No text messages received today"
-msgstr ""
+msgstr "Không có tin nhắn đã được nhận hôm nay"
 
 #: indicator/metrics.cpp:46
 #, qt-format
 msgid "<b>%1</b> calls received today"
-msgstr ""
+msgstr "<b>%1</b> cuộc gọi được nhận hôm nay"
 
 #: indicator/metrics.cpp:47
 msgid "No calls received today"
-msgstr ""
+msgstr "Không có cuộc gọi được nhận hôm nay"
 
 #: indicator/metrics.cpp:48
 #, qt-format
 msgid "<b>%1</b> calls made today"
-msgstr ""
+msgstr "<b>%1</b> cuộc gọi được thực hiện hôm nay"
 
 #: indicator/metrics.cpp:49 indicator/metrics.cpp:51
 msgid "No calls made today"
-msgstr ""
+msgstr "Không có cuộc gọi được thực hiện hôm nay"
 
 #: indicator/metrics.cpp:50
 #, qt-format
 msgid "Spent <b>%1</b> minutes in calls today"
-msgstr ""
+msgstr "Đã dành <b>%1</b> phút cho cuộc gọi hôm nay"
 
 #: indicator/textchannelobserver.cpp:225
 msgid "Unlock your sim card and try again from the messaging application."
-msgstr ""
+msgstr "Mở khóa thẻ SIM của bạn và thử lại từ ứng dụng Tin nhắn"
 
 #: indicator/textchannelobserver.cpp:227
 msgid "Deactivate flight mode and try again from the messaging application."
