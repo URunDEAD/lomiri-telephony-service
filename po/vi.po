@@ -230,15 +230,15 @@ msgstr "Đã dành <b>%1</b> phút cho cuộc gọi hôm nay"
 
 #: indicator/textchannelobserver.cpp:225
 msgid "Unlock your sim card and try again from the messaging application."
-msgstr "Mở khóa thẻ SIM của bạn và thử lại từ ứng dụng Tin nhắn"
+msgstr "Mở khóa thẻ SIM của bạn và thử lại từ ứng dụng Tin nhắn."
 
 #: indicator/textchannelobserver.cpp:227
 msgid "Deactivate flight mode and try again from the messaging application."
-msgstr ""
+msgstr "Tắt kích hoạt chế độ bay và thử lại từ ứng dụng Nhắn tin."
 
 #: indicator/textchannelobserver.cpp:230
 msgid "Try again from the messaging application."
-msgstr ""
+msgstr "Thử lại từ ứng dụng Nhắn tin"
 
 #: indicator/textchannelobserver.cpp:236
 msgid "The message could not be sent"
