@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: 2025-06-28 18:47+0000\n"
+"PO-Revision-Date: 2025-07-15 16:31+0000\n"
 "Last-Translator: phmqXPD <phmq.xpd@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/vi/>\n"
@@ -37,37 +37,37 @@ msgstr "Tôi đang bận bây giờ, tôi sẽ gọi sau."
 
 #: approver/approver.cpp:95
 msgid "I'm running late, on my way now."
-msgstr ""
+msgstr "Tôi đang bị muộn, tôi đang trên đường đến đây."
 
 #: approver/approver.cpp:96
 msgid "Please call me back later."
-msgstr ""
+msgstr "Hãy gọi cho tôi lần sau."
 
 #: approver/approver.cpp:457
 #, qt-format
 msgid "On [%1]"
-msgstr ""
+msgstr "Trên [%1]"
 
 #: approver/approver.cpp:461 indicator/messagingmenu.cpp:414
 msgid "Private number"
-msgstr ""
+msgstr "Số điện thoại riêng"
 
 #: approver/approver.cpp:464 indicator/messagingmenu.cpp:244
 #: indicator/messagingmenu.cpp:418 indicator/textchannelobserver.cpp:640
 msgid "Unknown number"
-msgstr ""
+msgstr "Số không xác định"
 
 #: approver/approver.cpp:470 approver/approver.cpp:485
 msgid "Caller number is not available"
-msgstr ""
+msgstr "Số người gọi không có sẵn"
 
 #: approver/approver.cpp:476
 msgid "Calling from private number"
-msgstr ""
+msgstr "Đang gọi qua số điện thoại riêng"
 
 #: approver/approver.cpp:479
 msgid "Calling from unknown number"
-msgstr ""
+msgstr "Đang gọi từ s.đ.t không xác định"
 
 #: approver/approver.cpp:482
 #, qt-format
