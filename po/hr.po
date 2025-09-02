@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: 2025-02-04 07:51+0000\n"
+"PO-Revision-Date: 2025-09-09 19:01+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/hr/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:03+0000\n"
 
 #: indicator/telephony-service-call.desktop.in:4
@@ -148,34 +148,24 @@ msgid "Call back"
 msgstr "Povratni poziv"
 
 #: indicator/messagingmenu.cpp:350
-#, fuzzy
-#| msgid "I missed your call - can you call me now?"
 msgid "Missed your call — can you call me now?"
-msgstr "Propustio sam vaš poziv, želite li me sada nazvati?"
+msgstr "Propustio sam vaš poziv – možete li me sada nazvati?"
 
 #: indicator/messagingmenu.cpp:351
-#, fuzzy
-#| msgid "I'm running late. I'm on my way."
 msgid "Running late. On my way."
-msgstr "Kasnim, na putu sam."
+msgstr "Kasnim. Na putu sam."
 
 #: indicator/messagingmenu.cpp:352
-#, fuzzy
-#| msgid "I'm busy at the moment. I'll call you later."
 msgid "Busy at the moment. Will call you later."
-msgstr "Trenutno sam zauzet. Nazvat ću vas kasnije."
+msgstr "Trenutačno sam zauzet. Nazvat ću vas kasnije."
 
 #: indicator/messagingmenu.cpp:353
-#, fuzzy
-#| msgid "I'll be 20 minutes late."
 msgid "I am 20 minutes late."
-msgstr "Kasnit ću 20 minuta."
+msgstr "Stićem za 20 minuta."
 
 #: indicator/messagingmenu.cpp:354
-#, fuzzy
-#| msgid "Sorry, I'm still busy. I'll call you later."
 msgid "Still busy. Will call you later."
-msgstr "Isprika, Još sam zauzet. Nazvat ću vas kasnije."
+msgstr "Još sam zauzet. Nazvat ću vas kasnije."
 
 #: indicator/messagingmenu.cpp:409
 #, qt-format
@@ -273,17 +263,17 @@ msgstr "Nova grupa"
 #: indicator/textchannelobserver.cpp:302
 #, qt-format
 msgid "You joined group %1 "
-msgstr ""
+msgstr "Pridružili ste se grupi %1 "
 
 #. TRANSLATORS : %1 is the group name
 #: indicator/textchannelobserver.cpp:306
 #, qt-format
 msgid "You joined group %1"
-msgstr ""
+msgstr "Pridružili ste se grupi %1"
 
 #: indicator/textchannelobserver.cpp:309
 msgid "You joined a new group"
-msgstr ""
+msgstr "Pridružili ste se novoj grupi"
 
 #: indicator/textchannelobserver.cpp:328
 msgid "View Group"
@@ -395,26 +385,26 @@ msgstr "Odustani"
 
 #: libtelephonyservice/callnotification.cpp:53
 msgid "Conf call on hold"
-msgstr ""
+msgstr "Konferencijski poziv na čekanju"
 
 #: libtelephonyservice/callnotification.cpp:53
 #, qt-format
 msgid "%1 call on hold"
-msgstr ""
+msgstr "%1 poziv na čekanju"
 
 #: libtelephonyservice/callnotification.cpp:56
 msgid "Conf call ended"
-msgstr ""
+msgstr "Konferencijski poziv završen"
 
 #: libtelephonyservice/callnotification.cpp:56
 #, qt-format
 msgid "%1 call ended"
-msgstr ""
+msgstr "%1 poziv završen"
 
 #: libtelephonyservice/callnotification.cpp:59
 #, qt-format
 msgid "%1 call declined"
-msgstr ""
+msgstr "%1 poziv odbijen"
 
 #: libtelephonyservice/contactwatcher.cpp:157
 msgid "Private Number"
