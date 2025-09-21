@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: 2023-02-22 19:39+0000\n"
-"Last-Translator: Sergii Horichenko <m@sgg.im>\n"
+"PO-Revision-Date: 2025-09-28 11:01+0000\n"
+"Last-Translator: Libre Fox <libre_fox@ilyamikcoder.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/uk/>\n"
 "Language: uk\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:03+0000\n"
 
 #: indicator/telephony-service-call.desktop.in:4
@@ -27,7 +27,7 @@ msgstr "Телефонні дзвінки"
 
 #: indicator/telephony-service-sms.desktop.in:4
 msgid "SMS"
-msgstr "СМС"
+msgstr "SMS"
 
 #: approver/approver.cpp:66
 msgid "Unknown caller"
@@ -150,7 +150,7 @@ msgstr "Зворотній виклик"
 
 #: indicator/messagingmenu.cpp:350
 msgid "Missed your call — can you call me now?"
-msgstr "У мене пропущений дзвінок від Вас. Не могли б Ви зателефонувати зараз?"
+msgstr "У мене пропущений дзвінок від вас. Не могли б ви зателефонувати зараз?"
 
 #: indicator/messagingmenu.cpp:351
 msgid "Running late. On my way."
@@ -158,7 +158,7 @@ msgstr "Запізнююся. Вже скоро буду."
 
 #: indicator/messagingmenu.cpp:352
 msgid "Busy at the moment. Will call you later."
-msgstr "Зараз не можу розмовляти. Зателефоную Вам пізніше."
+msgstr "Зараз не можу розмовляти. Зателефоную пізніше."
 
 #: indicator/messagingmenu.cpp:353
 msgid "I am 20 minutes late."
@@ -166,7 +166,7 @@ msgstr "Я запізнююсь на 20 хвилин."
 
 #: indicator/messagingmenu.cpp:354
 msgid "Still busy. Will call you later."
-msgstr "Досі у справах. Зателефоную Вам пізніше."
+msgstr "Досі у справах. Зателефоную вам пізніше."
 
 #: indicator/messagingmenu.cpp:409
 #, qt-format
@@ -185,7 +185,7 @@ msgstr "Повідомлення голосової пошти"
 msgid "%1 voicemail message"
 msgid_plural "%1 voicemail messages"
 msgstr[0] "%1 голосове повідомлення"
-msgstr[1] "%1 голосових повідомлення"
+msgstr[1] "%1 голосових повідомлень"
 msgstr[2] "%1 голосових повідомлень"
 
 #: indicator/messagingmenu.cpp:500
@@ -236,7 +236,7 @@ msgstr "Сьогодні загальна тривалість дзвінків 
 #: indicator/textchannelobserver.cpp:225
 msgid "Unlock your sim card and try again from the messaging application."
 msgstr ""
-"Розблокуйте SIM-картку і повторіть спробу за допомогою програми для "
+"Розблокуйте SIM-картку і повторіть спробу за допомогою застосунку для "
 "повідомлень."
 
 #: indicator/textchannelobserver.cpp:227
