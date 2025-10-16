@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: 2015-01-22 21:45+0000\n"
-"Last-Translator: Ibai Oihanguren Sala <Unknown>\n"
-"Language-Team: Basque <eu@li.org>\n"
+"PO-Revision-Date: 2025-10-23 10:02+0000\n"
+"Last-Translator: Joana R <git@joana.click>\n"
+"Language-Team: Basque <https://hosted.weblate.org/projects/lomiri/"
+"telephony-service/eu/>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:02+0000\n"
-"X-Generator: Launchpad (build 18298)\n"
 
 #: indicator/telephony-service-call.desktop.in:4
 msgid "Phone Calls"
@@ -46,7 +47,7 @@ msgstr "Dei nazazu berriro geroago, mesedez."
 #: approver/approver.cpp:457
 #, qt-format
 msgid "On [%1]"
-msgstr ""
+msgstr "[%1]an"
 
 #: approver/approver.cpp:461 indicator/messagingmenu.cpp:414
 msgid "Private number"
