@@ -138,8 +138,16 @@ bool QPulseAudioEngineWorker::createPulseContext()
     bool keepGoing = true;
     bool ok = true;
 
-    if (m_context)
-        return true;
+    if (m_context) {
+        pa_context_state_t state = pa_context_get_state(m_context);
+
+        if (PA_CONTEXT_IS_GOOD(state)) {
+            return true;
+        } else {
+            /* Release the current one and attempt a new one below. */
+            releasePulseContext();
+        }
+    }
 
     m_mainLoopApi = pa_threaded_mainloop_get_api(m_mainLoop);
 
