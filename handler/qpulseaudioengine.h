@@ -78,7 +78,7 @@ Q_SIGNALS:
     void availableAudioModesChanged(const AudioModes modes);
 
 public Q_SLOTS:
-    void handleCardEvent(const int evt, const unsigned int idx);
+    void handleCardEvent(void *context, const int evt, const unsigned int idx);
     void setCallMode(CallStatus callstatus, AudioMode audiomode);
     void setMicMute(bool muted); /* True if muted, false if unmuted */
 

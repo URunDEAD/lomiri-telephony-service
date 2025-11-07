@@ -89,13 +89,13 @@ static void subscribeCallback(pa_context *context, pa_subscription_event_type_t 
     if ((t & PA_SUBSCRIPTION_EVENT_FACILITY_MASK) == PA_SUBSCRIPTION_EVENT_CARD) {
         if ((t & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_CHANGE) {
             QMetaObject::invokeMethod((QPulseAudioEngineWorker *) userdata, "handleCardEvent",
-                    Qt::QueuedConnection, Q_ARG(int, PA_SUBSCRIPTION_EVENT_CHANGE), Q_ARG(unsigned int, idx));
+                    Qt::QueuedConnection, Q_ARG(void *, context), Q_ARG(int, PA_SUBSCRIPTION_EVENT_CHANGE), Q_ARG(unsigned int, idx));
         } else if ((t & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_NEW) {
             QMetaObject::invokeMethod((QPulseAudioEngineWorker *) userdata, "handleCardEvent",
-                    Qt::QueuedConnection, Q_ARG(int, PA_SUBSCRIPTION_EVENT_NEW), Q_ARG(unsigned int, idx));
+                    Qt::QueuedConnection, Q_ARG(void *, context), Q_ARG(int, PA_SUBSCRIPTION_EVENT_NEW), Q_ARG(unsigned int, idx));
         } else if ((t & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE) {
             QMetaObject::invokeMethod((QPulseAudioEngineWorker *) userdata, "handleCardEvent",
-                    Qt::QueuedConnection, Q_ARG(int, PA_SUBSCRIPTION_EVENT_REMOVE), Q_ARG(unsigned int, idx));
+                    Qt::QueuedConnection, Q_ARG(void *, context), Q_ARG(int, PA_SUBSCRIPTION_EVENT_REMOVE), Q_ARG(unsigned int, idx));
         }
     }
 }
@@ -451,6 +451,19 @@ static void serverinfo_cb(pa_context *context, const pa_server_info *info, void 
     pulseEngine->serverInfoCallback(info);
 }
 
+/* Run on PA mainloop thread. */
+static void operation_state_cb(pa_operation *o, void *userdata)
+{
+    QPulseAudioEngineWorker *pulseEngine = reinterpret_cast<QPulseAudioEngineWorker*>(userdata);
+
+    /*
+     * Success cases call `pa_threaded_mainloop_signal()` in their callbacks.
+     * FIXME: should it? (I'm not sure about order of operations.)
+     */
+    if (pa_operation_get_state(o) == PA_OPERATION_CANCELLED)
+        pa_threaded_mainloop_signal(pulseEngine->mainloop(), 0);
+}
+
 bool QPulseAudioEngineWorker::handleOperation(pa_operation *operation, const char *func_name)
 {
     if (!operation) {
@@ -461,10 +474,23 @@ bool QPulseAudioEngineWorker::handleOperation(pa_operation *operation, const cha
         return false;
     }
 
-    while (pa_operation_get_state(operation) == PA_OPERATION_RUNNING)
+    pa_operation_set_state_callback(operation, &operation_state_cb, this);
+
+    pa_operation_state state;
+    while ((state = pa_operation_get_state(operation)) == PA_OPERATION_RUNNING)
         pa_threaded_mainloop_wait(m_mainLoop);
     pa_operation_unref(operation);
-    return true;
+    
+    if (state == PA_OPERATION_DONE) {
+        return true;
+    } else {
+        qCritical("'%s' cancelled mid-operation (lost PulseAudio connection?)",
+            func_name);
+        /* Free resources so it can retry a new connection during next operation */
+        pa_threaded_mainloop_unlock(m_mainLoop);
+        releasePulseContext();
+        return false;
+    }
 }
 
 int QPulseAudioEngineWorker::setupVoiceCall()
@@ -733,9 +759,18 @@ void QPulseAudioEngineWorker::unplugCardCallback()
     }
 }
 
-void QPulseAudioEngineWorker::handleCardEvent(const int evt, const unsigned int idx)
+/* context is passed as `void *` to workaround QMetaType limitation on incomplete type. */
+void QPulseAudioEngineWorker::handleCardEvent(void *context, const int evt, const unsigned int idx)
 {
     pa_operation *o = NULL;
+
+    if (m_context != context) {
+        /*
+         * Context has been released or re-created since this event is posted,
+         * which means this invocation is now stale.
+         */
+        return;
+    }
 
     /* Internal state var used to know if we need to update our internal state */
     m_handleevent = false;
