@@ -1,0 +1,10 @@
+[Unit]
+Description=Telephony Service Handler
+
+[Service]
+Type=dbus
+BusName=com.lomiri.TelephonyServiceHandler
+BusName=org.freedesktop.Telepathy.Client.TelephonyServiceHandler
+ExecStart=/usr/bin/lomiri-telephony-service-handler
+
+# DBus-activated, thus no [Install] section.

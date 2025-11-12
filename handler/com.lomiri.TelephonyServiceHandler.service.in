@@ -1,3 +1,4 @@
 [D-BUS Service]
 Name=com.lomiri.TelephonyServiceHandler
 Exec=@CMAKE_INSTALL_FULL_BINDIR@/lomiri-telephony-service-handler
+SystemdService=lomiri-telephony-service-handler.service
