@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: 2025-11-10 12:51+0000\n"
+"PO-Revision-Date: 2025-11-17 13:51+0000\n"
 "Last-Translator: Wenwen Luo <wenwenluo130@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "lomiri/telephony-service/zh_LATN@pinyin/>\n"
@@ -33,20 +33,20 @@ msgstr "未知来电"
 
 #: approver/approver.cpp:94
 msgid "I'm busy at the moment. I'll call later."
-msgstr ""
+msgstr "我正在忙。稍后回电。"
 
 #: approver/approver.cpp:95
 msgid "I'm running late, on my way now."
-msgstr ""
+msgstr "我快迟到了，正在赶来的路上。"
 
 #: approver/approver.cpp:96
 msgid "Please call me back later."
-msgstr ""
+msgstr "请稍后再拨。"
 
 #: approver/approver.cpp:457
 #, qt-format
 msgid "On [%1]"
-msgstr ""
+msgstr "位于 [%1]"
 
 #: approver/approver.cpp:461 indicator/messagingmenu.cpp:414
 msgid "Private number"
