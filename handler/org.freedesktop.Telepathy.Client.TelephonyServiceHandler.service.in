@@ -1,3 +1,4 @@
 [D-BUS Service]
 Name=org.freedesktop.Telepathy.Client.TelephonyServiceHandler
 Exec=@CMAKE_INSTALL_FULL_BINDIR@/lomiri-telephony-service-handler
+SystemdService=lomiri-telephony-service-handler.service

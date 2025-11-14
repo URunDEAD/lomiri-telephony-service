@@ -35,3 +35,4 @@ endif
 override_dh_installsystemduser:
 	dh_installsystemduser --package=lomiri-telephony-service --name=lomiri-indicator-telephony-service
 	dh_installsystemduser --package=lomiri-telephony-service --name=lomiri-telephony-service-approver
+	dh_installsystemduser --package=lomiri-telephony-service --name=lomiri-telephony-service-handler
