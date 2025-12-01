@@ -1,6 +1,117 @@
+2025-12-01 Mike Gabriel
+
+        * Release 0.6.2 (HEAD -> main, tag: 0.6.2)
+
+2025-11-17 Wenwen Luo
+
+        * Translated using Weblate (Chinese (Simplified) (zh_LATN@pinyin))
+          (20d7d409)
+
+2025-11-13 Wenwen Luo
+
+        * Translated using Weblate (Chinese (Simplified) (zh_LATN@pinyin))
+          (492d1ddf)
+
+2025-11-14 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/handle-pa-crash-mid-op' into
+          'main' (0efd0175)
+
+2025-11-07 Ratchanan Srirattanamet
+
+        * handler/: handle PulseAudio crash mid-operation (4f8509ad)
+
+2025-11-14 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/handler-dbus-activated' into
+          'main' (49632f76)
+
+2025-11-12 Ratchanan Srirattanamet
+
+        * Fix lomiri-telephony-service-handler being launched twice
+          (1568f912)
+
+2025-11-06 Wenwen Luo
+
+        * Translated using Weblate (Chinese (Simplified) (zh_LATN@pinyin))
+          (853ee56f)
+
+2025-10-25 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/exit-on-pa-crash_v2' into 'main'
+          (3832bbb0)
+
+2025-10-24 Ratchanan Srirattanamet
+
+        * handler/: be more reactive to PulseAudio crash (ea4a0550)
+
+2025-10-16 Joana R
+
+        * Translated using Weblate (Basque) (d5004750)
+
+2025-09-21 Libre Fox
+
+        * Translated using Weblate (Ukrainian) (cb749945)
+
+2025-09-02 Milo Ivir
+
+        * Translated using Weblate (Croatian) (16bdb98d)
+
+2025-07-25 ButterflyOfFire
+
+        * Translated using Weblate (Kabyle) (d4188be8)
+
+2025-07-15 phmqXPD
+
+        * Translated using Weblate (Vietnamese) (172f422f)
+        * Translated using Weblate (Vietnamese) (02477eed)
+        * Translated using Weblate (Vietnamese) (4f8d7bea)
+        * Translated using Weblate (Vietnamese) (56c85723)
+        * Translated using Weblate (Vietnamese) (208d8c99)
+
+2025-07-11 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/fredldotme/dialer-launcher' into 'main'
+          (fae3ae2d)
+
+2025-07-11 Alfred Neumayer
+
+        * approver: Open lomiri-dialer-app with correct desktop launcher
+          (3816ed5b)
+
+2025-06-28 phmqXPD
+
+        * Translated using Weblate (Vietnamese) (ea382092)
+        * Translated using Weblate (Vietnamese) (f3ef751b)
+
+2025-06-03 Mike Gabriel
+
+        * po/: Update translation template file. (5ce10415)
+
+2025-05-28 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/revert-usermetrics-translation'
+          into 'main' (18a71c02)
+
+2025-05-28 Ratchanan Srirattanamet
+
+        * Revert "i18n: fix broken translations" (caec553e)
+
+2025-05-19 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (e7b4be10)
+
+2025-05-18 Ida Brenna
+
+        * Translated using Weblate (Norwegian Bokmål) (2dc9a428)
+
+2025-05-08 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (76487917)
+
 2025-05-05 Mike Gabriel
 
-        * Release 0.6.1 (HEAD -> main, tag: 0.6.1)
+        * Release 0.6.1 (be73f5ac) (tag: 0.6.1)
 
 2025-04-16 Mike Gabriel
 
