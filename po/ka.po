@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: 2023-04-13 05:14+0000\n"
+"PO-Revision-Date: 2025-12-25 03:39+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/ka/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #: indicator/telephony-service-call.desktop.in:4
 msgid "Phone Calls"
@@ -169,8 +169,8 @@ msgstr ""
 #, qt-format
 msgid "%1 missed call"
 msgid_plural "%1 missed calls"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 გამოტოვებული ზარი"
+msgstr[1] "%1 გამოტოვებული ზარი"
 
 #: indicator/messagingmenu.cpp:492
 msgid "Voicemail messages"
@@ -180,8 +180,8 @@ msgstr ""
 #, qt-format
 msgid "%1 voicemail message"
 msgid_plural "%1 voicemail messages"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 ხმოვანი ფოსტის შეტყობინება"
+msgstr[1] "%1 ხმოვანი ფოსტის შეტყობინება"
 
 #: indicator/messagingmenu.cpp:500
 msgid "Voicemail"
@@ -312,36 +312,36 @@ msgstr ""
 #, qt-format
 msgid "Attachment: %1 image"
 msgid_plural "Attachments: %1 images"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "მიმაგრებულია: %1 გამოსახულება"
+msgstr[1] "მიმაგრებულია: %1 გამოსახულება"
 
 #: indicator/textchannelobserver.cpp:606
 #, qt-format
 msgid "Attachment: %1 video"
 msgid_plural "Attachments: %1 videos"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "მიმაგრებულია: %1 ვიდეო"
+msgstr[1] "მიმაგრებულია: %1 ვიდეო"
 
 #: indicator/textchannelobserver.cpp:608
 #, qt-format
 msgid "Attachment: %1 contact"
 msgid_plural "Attachments: %1 contacts"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "მიმაგრებულია: %1 კონტაქტი"
+msgstr[1] "მიმაგრებულია: %1 კონტაქტი"
 
 #: indicator/textchannelobserver.cpp:610
 #, qt-format
 msgid "Attachment: %1 audio clip"
 msgid_plural "Attachments: %1 audio clips"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "მიმაგრებულია: %1 აუდიოკლიპი"
+msgstr[1] "მიმაგრებულია: %1 აუდიოკლიპი"
 
 #: indicator/textchannelobserver.cpp:612
 #, qt-format
 msgid "Attachment: %1 file"
 msgid_plural "Attachments: %1 files"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "მიმაგრებულია: %1 ფაილი"
+msgstr[1] "მიმაგრებულია: %1 ფაილი"
 
 #. TRANSLATORS : message displayed when any error occurred while receiving a MMS (case when cellular-data is off, or any downloading issue). Notify that there was a message, the user can find more about it in the messaging-app.
 #: indicator/textchannelobserver.cpp:615
