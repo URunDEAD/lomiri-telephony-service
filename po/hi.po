@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: 2023-06-28 04:33+0000\n"
-"Last-Translator: \"Rudra Harsh V.Singh\" <rudraHarsh45@proton.me>\n"
+"PO-Revision-Date: 2026-02-20 16:27+0000\n"
+"Last-Translator: Satyaakam Goswami <satyaakam@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/lomiri/telephony-"
 "service/hi/>\n"
 "Language: hi\n"
@@ -17,387 +17,394 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.18.1\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 
 #: indicator/telephony-service-call.desktop.in:4
 msgid "Phone Calls"
-msgstr ""
+msgstr "फोन कॉल"
 
 #: indicator/telephony-service-sms.desktop.in:4
 msgid "SMS"
-msgstr ""
+msgstr "टेस्ट"
 
 #: approver/approver.cpp:66
 msgid "Unknown caller"
-msgstr ""
+msgstr "अज्ञात फ़ोन"
 
 #: approver/approver.cpp:94
 msgid "I'm busy at the moment. I'll call later."
-msgstr ""
+msgstr "मैं इस समय व्यस्त हूँ। मैं बाद में कॉल करूँगा।"
 
 #: approver/approver.cpp:95
 msgid "I'm running late, on my way now."
-msgstr ""
+msgstr "मुझे देर हो रही है, मैं अभी रास्ते में हूँ।"
 
 #: approver/approver.cpp:96
 msgid "Please call me back later."
-msgstr ""
+msgstr "मुझे बाद में फिर से संपर्क करें।"
 
 #: approver/approver.cpp:457
 #, qt-format
 msgid "On [%1]"
-msgstr ""
+msgstr "[%1] का"
 
 #: approver/approver.cpp:461 indicator/messagingmenu.cpp:414
 msgid "Private number"
-msgstr ""
+msgstr "निजी संख्या"
 
 #: approver/approver.cpp:464 indicator/messagingmenu.cpp:244
 #: indicator/messagingmenu.cpp:418 indicator/textchannelobserver.cpp:640
 msgid "Unknown number"
-msgstr ""
+msgstr "अज्ञात संख्या"
 
 #: approver/approver.cpp:470 approver/approver.cpp:485
 msgid "Caller number is not available"
-msgstr ""
+msgstr "कॉलर नंबर उपलब्ध नहीं है"
 
 #: approver/approver.cpp:476
 msgid "Calling from private number"
-msgstr ""
+msgstr "स्वायत्त संख्या से बुला रहा है"
 
 #: approver/approver.cpp:479
 msgid "Calling from unknown number"
-msgstr ""
+msgstr "अज्ञात संख्या से कॉल कर रहा है"
 
 #: approver/approver.cpp:482
 #, qt-format
 msgid "Calling from %1"
-msgstr ""
+msgstr "पहुंच रहा है %1"
 
 #: approver/approver.cpp:529
 msgid "Hold + Answer"
-msgstr ""
+msgstr "रखें + उत्तर"
 
 #: approver/approver.cpp:530
 msgid "Accept"
-msgstr ""
+msgstr "मान्यता दे"
 
 #: approver/approver.cpp:543
 msgid "End + Answer"
-msgstr ""
+msgstr "एंड + उत्तर"
 
 #: approver/approver.cpp:552
 msgid "Decline"
-msgstr ""
+msgstr "नकल"
 
 #: approver/approver.cpp:560
 msgid "Message & decline"
-msgstr ""
+msgstr "निराशा & प्रत्यारोपण"
 
 #: approver/main.cpp:46
 msgid "Telephony Service Approver"
-msgstr ""
+msgstr "टेलीफोनी सेवा अनुमोदक"
 
 #: indicator/authhandler.cpp:72
 msgid "Authentication failed. Do you want to review your credentials?"
 msgstr ""
+"प्रमाणीकरण विफल रहा। क्या आप अपने क्रेडेंशियल की समीक्षा करना चाहते हैं?"
 
 #: indicator/authhandler.cpp:91
 msgid "Yes"
-msgstr ""
+msgstr "ज़ीसी"
 
 #: indicator/authhandler.cpp:94
 msgid "No"
-msgstr ""
+msgstr "नहीं"
 
 #: indicator/displaynamesettings.cpp:35
 #, qt-format
 msgid "SIM %1"
-msgstr ""
+msgstr "सीएम %1"
 
 #: indicator/main.cpp:53
 msgid "Telephony Service Indicator"
-msgstr ""
+msgstr "मोबाइल फोन सेवा संकेत"
 
 #: indicator/messagingmenu.cpp:83 indicator/messagingmenu.cpp:87
 msgid "Telephony Service"
-msgstr ""
+msgstr "मोबाइल फोन सेवा"
 
 #: indicator/messagingmenu.cpp:151 indicator/messagingmenu.cpp:293
 #: indicator/messagingmenu.cpp:360
 msgid "Send"
-msgstr ""
+msgstr "भेजना"
 
 #. TRANSLATORS : %1 is the group name and %2 is the recipient name
 #: indicator/messagingmenu.cpp:262 indicator/textchannelobserver.cpp:671
 #: indicator/textchannelobserver.cpp:675
 #, qt-format
 msgid "Message to %1 from %2"
-msgstr ""
+msgstr "संदेश %1 को %2 से"
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
 #, qt-format
 msgid "Message to the group from %1"
-msgstr ""
+msgstr "समूह के लिए संदेश - समूह में %1 का संदेश"
 
 #: indicator/messagingmenu.cpp:345
 msgid "Call back"
-msgstr ""
+msgstr "फ़ोन बैक"
 
 #: indicator/messagingmenu.cpp:350
 msgid "Missed your call — can you call me now?"
-msgstr ""
+msgstr "आपकी कॉल में देर हुई - आप मुझे अब फोन कर सकते हैं?"
 
 #: indicator/messagingmenu.cpp:351
 msgid "Running late. On my way."
-msgstr ""
+msgstr "निकल गए हैं।"
 
 #: indicator/messagingmenu.cpp:352
 msgid "Busy at the moment. Will call you later."
-msgstr ""
+msgstr "काम में तेजी से हैं। बाद में आपको फोन करूंगा।"
 
 #: indicator/messagingmenu.cpp:353
 msgid "I am 20 minutes late."
-msgstr ""
+msgstr "मैं 20 मिनट पीछे हूँ।"
 
 #: indicator/messagingmenu.cpp:354
 msgid "Still busy. Will call you later."
-msgstr ""
+msgstr "ज़रूरी नहीं, बाद में आपको बुलाऊँगा।"
 
 #: indicator/messagingmenu.cpp:409
 #, qt-format
 msgid "%1 missed call"
 msgid_plural "%1 missed calls"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 पीछे की बुलिंग"
+msgstr[1] "%१ बिना मिली बुलाएं"
 
 #: indicator/messagingmenu.cpp:492
 msgid "Voicemail messages"
-msgstr ""
+msgstr "पोस्ट फोन संदेश"
 
 #: indicator/messagingmenu.cpp:495
 #, qt-format
 msgid "%1 voicemail message"
 msgid_plural "%1 voicemail messages"
-msgstr[0] ""
+msgstr[0] "वॉइसमेल संदेश"
 msgstr[1] ""
+"फोन लेआउट के लिए नोटिस:\n"
+"वॉइस मेल की संदेशें %1"
 
 #: indicator/messagingmenu.cpp:500
 msgid "Voicemail"
-msgstr ""
+msgstr "मेल संदेश"
 
 #: indicator/metrics.cpp:42
 #, qt-format
 msgid "<b>%1</b> text messages sent today"
-msgstr ""
+msgstr "सबसे %1 दैनिक संदेश भेजे गए हैं"
 
 #: indicator/metrics.cpp:43
 msgid "No text messages sent today"
-msgstr ""
+msgstr "आज कोई संदेश भेजा नहीं गया।"
 
 #: indicator/metrics.cpp:44
 #, qt-format
 msgid "<b>%1</b> text messages received today"
-msgstr ""
+msgstr "%1 प्रेषित संदेश मिले"
 
 #: indicator/metrics.cpp:45
 msgid "No text messages received today"
-msgstr ""
+msgstr "अज़ुब़ार न्यूमेरो मैसेज नहीं आया"
 
 #: indicator/metrics.cpp:46
 #, qt-format
 msgid "<b>%1</b> calls received today"
-msgstr ""
+msgstr "%1 आज आये हुए बुलाएं"
 
 #: indicator/metrics.cpp:47
 msgid "No calls received today"
-msgstr ""
+msgstr "आज कोई बुलाया नहीं"
 
 #: indicator/metrics.cpp:48
 #, qt-format
 msgid "<b>%1</b> calls made today"
-msgstr ""
+msgstr "%1 कॉल दिन में हुए"
 
 #: indicator/metrics.cpp:49 indicator/metrics.cpp:51
 msgid "No calls made today"
-msgstr ""
+msgstr "आज कोई बुलता नहीं"
 
 #: indicator/metrics.cpp:50
 #, qt-format
 msgid "Spent <b>%1</b> minutes in calls today"
-msgstr ""
+msgstr "पहले कॉल में बिताए गए <i>%1</i> मिनट"
 
 #: indicator/textchannelobserver.cpp:225
 msgid "Unlock your sim card and try again from the messaging application."
 msgstr ""
+"आप अपनी सिम कार्ड को एन्क्रिप्ट करें और फिर मैसेजिंग ऐप से फिर से प्रयास करें।"
 
 #: indicator/textchannelobserver.cpp:227
 msgid "Deactivate flight mode and try again from the messaging application."
-msgstr ""
+msgstr "ફ़्लाइट मोड़ को निष्क्रिय करें और फिर से कोशिश करें, संदेशिंग ऐप से।"
 
 #: indicator/textchannelobserver.cpp:230
 msgid "Try again from the messaging application."
-msgstr ""
+msgstr "फिर से मैसेजिंग ऐप से कोशिश करें।"
 
 #: indicator/textchannelobserver.cpp:236
 msgid "The message could not be sent"
-msgstr ""
+msgstr "पोस्ट का संदेश भेजने में असफल रहा।"
 
 #: indicator/textchannelobserver.cpp:249 indicator/textchannelobserver.cpp:713
 msgid "View message"
-msgstr ""
+msgstr "देखें संदेश"
 
 #: indicator/textchannelobserver.cpp:295
 msgid "New Group"
-msgstr ""
+msgstr "नया समूह"
 
 #. TRANSLATORS : %1 is the group name
 #: indicator/textchannelobserver.cpp:302
 #, qt-format
 msgid "You joined group %1 "
-msgstr ""
+msgstr "आप ग्रुप %1 में शामिल हो गए हैं। "
 
 #. TRANSLATORS : %1 is the group name
 #: indicator/textchannelobserver.cpp:306
 #, qt-format
 msgid "You joined group %1"
-msgstr ""
+msgstr "आप ने समूह %1 में शामिल हो गए।"
 
 #: indicator/textchannelobserver.cpp:309
 msgid "You joined a new group"
-msgstr ""
+msgstr "आप एक नया समूह में शामिल हो गए।"
 
 #: indicator/textchannelobserver.cpp:328
 msgid "View Group"
-msgstr ""
+msgstr "दृश्य समूह"
 
 #: indicator/textchannelobserver.cpp:367 indicator/ussdindicator.cpp:116
 msgid "Ok"
-msgstr ""
+msgstr "स्वीकार"
 
 #: indicator/textchannelobserver.cpp:373
 msgid "Save"
-msgstr ""
+msgstr "बेफ़िक्र"
 
 #: indicator/textchannelobserver.cpp:468
 msgid "Emergency Alert"
-msgstr ""
+msgstr "alert ₹ 100 emergency ₹ 200"
 
 #: indicator/textchannelobserver.cpp:471
 msgid "Emergency Alert: Extreme"
-msgstr ""
+msgstr "अलर्ट: सख्त"
 
 #: indicator/textchannelobserver.cpp:474
 msgid "Emergency Alert: Severe"
-msgstr ""
+msgstr "भयावह अलर्ट"
 
 #: indicator/textchannelobserver.cpp:477
 msgid "Emergency Alert: Notice"
-msgstr ""
+msgstr "अलर्ट संकेत: सूचना"
 
 #: indicator/textchannelobserver.cpp:482
 msgid "AMBER Alert"
-msgstr ""
+msgstr "उल्लेखनीय संदेश (Ullenchana sandesh)"
 
 #: indicator/textchannelobserver.cpp:485
 msgid "Alert"
-msgstr ""
+msgstr "स alert"
 
 #: indicator/textchannelobserver.cpp:531
 msgid "Show alert"
-msgstr ""
+msgstr "संकेत दिखाएं"
 
 #: indicator/textchannelobserver.cpp:604
 #, qt-format
 msgid "Attachment: %1 image"
 msgid_plural "Attachments: %1 images"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "विशेषता: %1 तस्वीर"
+msgstr[1] "%sampattiyan: %1 images"
 
 #: indicator/textchannelobserver.cpp:606
 #, qt-format
 msgid "Attachment: %1 video"
 msgid_plural "Attachments: %1 videos"
 msgstr[0] ""
-msgstr[1] ""
+"बिना विज़डम के (without wizardry) और इसी तरह, यहाँ है:\n"
+"\n"
+"आटachment: %1 वीडियो"
+msgstr[1] "आटचमेंट्स: %1 वीडियो"
 
 #: indicator/textchannelobserver.cpp:608
 #, qt-format
 msgid "Attachment: %1 contact"
 msgid_plural "Attachments: %1 contacts"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%sampark%1"
+msgstr[1] "संपर्क: %1 संबंध"
 
 #: indicator/textchannelobserver.cpp:610
 #, qt-format
 msgid "Attachment: %1 audio clip"
 msgid_plural "Attachments: %1 audio clips"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "विशेषता: %1 ऑडियो क्लिप"
+msgstr[1] "पृष्ठभूमि: %1 ऑडियो क्लिप्स"
 
 #: indicator/textchannelobserver.cpp:612
 #, qt-format
 msgid "Attachment: %1 file"
 msgid_plural "Attachments: %1 files"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "विशेषता: %1 फाइल"
+msgstr[1] "संलग्नamientos: %1 फाइलें"
 
 #. TRANSLATORS : message displayed when any error occurred while receiving a MMS (case when cellular-data is off, or any downloading issue). Notify that there was a message, the user can find more about it in the messaging-app.
 #: indicator/textchannelobserver.cpp:615
 msgid "New MMS message"
-msgstr ""
+msgstr "नया एमएमएस संदेश"
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/textchannelobserver.cpp:679 indicator/textchannelobserver.cpp:683
 #, qt-format
 msgid "Message to group from %1"
-msgstr ""
+msgstr "मैसेज ग्रुप को से: %1"
 
 #: indicator/textchannelobserver.cpp:749
 #, qt-format
 msgid "Message from %1"
-msgstr ""
+msgstr "संदेश आपके से %1"
 
 #: indicator/textchannelobserver.cpp:910
 msgid "Please, select a SIM card:"
-msgstr ""
+msgstr "कृपया एक सिम कार्ड चुनें"
 
 #: indicator/ussdindicator.cpp:119
 msgid "Reply"
-msgstr ""
+msgstr "उत्तर"
 
 #: indicator/ussdindicator.cpp:142
 msgid "Cancel"
-msgstr "रद्द करें"
+msgstr "वापस करें"
 
 #: libtelephonyservice/callnotification.cpp:53
 msgid "Conf call on hold"
-msgstr ""
+msgstr "प्रासंगिक सम्मेलन रुक जाना"
 
 #: libtelephonyservice/callnotification.cpp:53
 #, qt-format
 msgid "%1 call on hold"
-msgstr ""
+msgstr "%1 कॉल पर टेलीफोन रुका हुआ है"
 
 #: libtelephonyservice/callnotification.cpp:56
 msgid "Conf call ended"
-msgstr ""
+msgstr "भाषा परिवर्तन: Conf call ended → बैठक करेंट कॉल समाप्त हो गई"
 
 #: libtelephonyservice/callnotification.cpp:56
 #, qt-format
 msgid "%1 call ended"
-msgstr ""
+msgstr "%1 बुलाई गई हुई"
 
 #: libtelephonyservice/callnotification.cpp:59
 #, qt-format
 msgid "%1 call declined"
-msgstr ""
+msgstr "%1 कॉल अस्वीकृत हो गई"
 
 #: libtelephonyservice/contactwatcher.cpp:157
 msgid "Private Number"
-msgstr ""
+msgstr "निजी संख्या"
 
 #: libtelephonyservice/contactwatcher.cpp:159
 msgid "Unknown Number"
-msgstr ""
+msgstr "अज्ञात संख्या"
