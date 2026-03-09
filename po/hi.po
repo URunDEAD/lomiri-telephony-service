@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: 2026-02-20 16:27+0000\n"
+"PO-Revision-Date: 2026-03-11 04:18+0000\n"
 "Last-Translator: Satyaakam Goswami <satyaakam@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/lomiri/telephony-"
 "service/hi/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: indicator/telephony-service-call.desktop.in:4
 msgid "Phone Calls"
@@ -181,10 +181,8 @@ msgstr "पोस्ट फोन संदेश"
 #, qt-format
 msgid "%1 voicemail message"
 msgid_plural "%1 voicemail messages"
-msgstr[0] "वॉइसमेल संदेश"
-msgstr[1] ""
-"फोन लेआउट के लिए नोटिस:\n"
-"वॉइस मेल की संदेशें %1"
+msgstr[0] "%1 वॉइसमेल संदेश"
+msgstr[1] "%1 वॉइसमेल संदेश"
 
 #: indicator/messagingmenu.cpp:500
 msgid "Voicemail"
@@ -193,16 +191,16 @@ msgstr "मेल संदेश"
 #: indicator/metrics.cpp:42
 #, qt-format
 msgid "<b>%1</b> text messages sent today"
-msgstr "सबसे %1 दैनिक संदेश भेजे गए हैं"
+msgstr "आज भेजे गए <b>%1</b> टेक्स्ट संदेश"
 
 #: indicator/metrics.cpp:43
 msgid "No text messages sent today"
-msgstr "आज कोई संदेश भेजा नहीं गया।"
+msgstr "आज कोई संदेश भेजा नहीं गया"
 
 #: indicator/metrics.cpp:44
 #, qt-format
 msgid "<b>%1</b> text messages received today"
-msgstr "%1 प्रेषित संदेश मिले"
+msgstr "आज प्राप्त हुए <b>%1</b> टेक्स्ट संदेश"
 
 #: indicator/metrics.cpp:45
 msgid "No text messages received today"
@@ -211,7 +209,7 @@ msgstr "अज़ुब़ार न्यूमेरो मैसेज नह
 #: indicator/metrics.cpp:46
 #, qt-format
 msgid "<b>%1</b> calls received today"
-msgstr "%1 आज आये हुए बुलाएं"
+msgstr "<b>1%</b> आज प्राप्त हुई कॉल"
 
 #: indicator/metrics.cpp:47
 msgid "No calls received today"
@@ -220,7 +218,7 @@ msgstr "आज कोई बुलाया नहीं"
 #: indicator/metrics.cpp:48
 #, qt-format
 msgid "<b>%1</b> calls made today"
-msgstr "%1 कॉल दिन में हुए"
+msgstr "<b>%1</b> कॉल दिन में हुए"
 
 #: indicator/metrics.cpp:49 indicator/metrics.cpp:51
 msgid "No calls made today"
@@ -229,7 +227,7 @@ msgstr "आज कोई बुलता नहीं"
 #: indicator/metrics.cpp:50
 #, qt-format
 msgid "Spent <b>%1</b> minutes in calls today"
-msgstr "पहले कॉल में बिताए गए <i>%1</i> मिनट"
+msgstr "आज कॉल करने में <b>%1</b> मिनट खर्च हुए"
 
 #: indicator/textchannelobserver.cpp:225
 msgid "Unlock your sim card and try again from the messaging application."
@@ -246,7 +244,7 @@ msgstr "फिर से मैसेजिंग ऐप से कोशिश 
 
 #: indicator/textchannelobserver.cpp:236
 msgid "The message could not be sent"
-msgstr "पोस्ट का संदेश भेजने में असफल रहा।"
+msgstr "पोस्ट का संदेश भेजने में असफल रहा"
 
 #: indicator/textchannelobserver.cpp:249 indicator/textchannelobserver.cpp:713
 msgid "View message"
@@ -266,11 +264,11 @@ msgstr "आप ग्रुप %1 में शामिल हो गए है
 #: indicator/textchannelobserver.cpp:306
 #, qt-format
 msgid "You joined group %1"
-msgstr "आप ने समूह %1 में शामिल हो गए।"
+msgstr "आप ने समूह %1 में शामिल हो गए"
 
 #: indicator/textchannelobserver.cpp:309
 msgid "You joined a new group"
-msgstr "आप एक नया समूह में शामिल हो गए।"
+msgstr "आप एक नए समूह में शामिल हुए हैं"
 
 #: indicator/textchannelobserver.cpp:328
 msgid "View Group"
