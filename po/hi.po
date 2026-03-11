@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: 2026-03-11 04:18+0000\n"
+"PO-Revision-Date: 2026-03-11 21:28+0000\n"
 "Last-Translator: Satyaakam Goswami <satyaakam@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/lomiri/telephony-"
 "service/hi/>\n"
@@ -321,11 +321,8 @@ msgstr[1] "%sampattiyan: %1 images"
 #, qt-format
 msgid "Attachment: %1 video"
 msgid_plural "Attachments: %1 videos"
-msgstr[0] ""
-"बिना विज़डम के (without wizardry) और इसी तरह, यहाँ है:\n"
-"\n"
-"आटachment: %1 वीडियो"
-msgstr[1] "आटचमेंट्स: %1 वीडियो"
+msgstr[0] "संलग्नक: %1 वीडियो"
+msgstr[1] "संलग्नक: %1 वीडियो"
 
 #: indicator/textchannelobserver.cpp:608
 #, qt-format
