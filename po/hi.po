@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: 2026-03-11 21:28+0000\n"
+"PO-Revision-Date: 2026-03-22 12:09+0000\n"
 "Last-Translator: Satyaakam Goswami <satyaakam@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/lomiri/telephony-"
 "service/hi/>\n"
@@ -170,8 +170,8 @@ msgstr "ज़रूरी नहीं, बाद में आपको बु
 #, qt-format
 msgid "%1 missed call"
 msgid_plural "%1 missed calls"
-msgstr[0] "%1 पीछे की बुलिंग"
-msgstr[1] "%१ बिना मिली बुलाएं"
+msgstr[0] "%1 मिस्ड कॉल"
+msgstr[1] "%१ मिस्ड कॉल"
 
 #: indicator/messagingmenu.cpp:492
 msgid "Voicemail messages"
@@ -363,7 +363,7 @@ msgstr "संदेश आपके से %1"
 
 #: indicator/textchannelobserver.cpp:910
 msgid "Please, select a SIM card:"
-msgstr "कृपया एक सिम कार्ड चुनें"
+msgstr "कृपया एक सिम कार्ड चुनें:"
 
 #: indicator/ussdindicator.cpp:119
 msgid "Reply"
