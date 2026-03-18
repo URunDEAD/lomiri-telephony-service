@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: 2026-03-11 04:18+0000\n"
+"PO-Revision-Date: 2026-03-22 12:09+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
 "lomiri/telephony-service/en_GB/>\n"
@@ -134,7 +134,7 @@ msgstr "Send"
 #: indicator/textchannelobserver.cpp:675
 #, qt-format
 msgid "Message to %1 from %2"
-msgstr ""
+msgstr "Message to %1 from %2"
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
@@ -251,27 +251,27 @@ msgstr "View message"
 
 #: indicator/textchannelobserver.cpp:295
 msgid "New Group"
-msgstr ""
+msgstr "New Group"
 
 #. TRANSLATORS : %1 is the group name
 #: indicator/textchannelobserver.cpp:302
 #, qt-format
 msgid "You joined group %1 "
-msgstr ""
+msgstr "You joined group %1 "
 
 #. TRANSLATORS : %1 is the group name
 #: indicator/textchannelobserver.cpp:306
 #, qt-format
 msgid "You joined group %1"
-msgstr ""
+msgstr "You joined group %1"
 
 #: indicator/textchannelobserver.cpp:309
 msgid "You joined a new group"
-msgstr ""
+msgstr "You joined a new group"
 
 #: indicator/textchannelobserver.cpp:328
 msgid "View Group"
-msgstr ""
+msgstr "View Group"
 
 #: indicator/textchannelobserver.cpp:367 indicator/ussdindicator.cpp:116
 msgid "Ok"
@@ -283,31 +283,31 @@ msgstr "Save"
 
 #: indicator/textchannelobserver.cpp:468
 msgid "Emergency Alert"
-msgstr ""
+msgstr "Emergency Alert"
 
 #: indicator/textchannelobserver.cpp:471
 msgid "Emergency Alert: Extreme"
-msgstr ""
+msgstr "Emergency Alert: Extreme"
 
 #: indicator/textchannelobserver.cpp:474
 msgid "Emergency Alert: Severe"
-msgstr ""
+msgstr "Emergency Alert: Severe"
 
 #: indicator/textchannelobserver.cpp:477
 msgid "Emergency Alert: Notice"
-msgstr ""
+msgstr "Emergency Alert: Notice"
 
 #: indicator/textchannelobserver.cpp:482
 msgid "AMBER Alert"
-msgstr ""
+msgstr "AMBER Alert"
 
 #: indicator/textchannelobserver.cpp:485
 msgid "Alert"
-msgstr ""
+msgstr "Alert"
 
 #: indicator/textchannelobserver.cpp:531
 msgid "Show alert"
-msgstr ""
+msgstr "Show alert"
 
 #: indicator/textchannelobserver.cpp:604
 #, qt-format
@@ -374,26 +374,26 @@ msgstr "Cancel"
 
 #: libtelephonyservice/callnotification.cpp:53
 msgid "Conf call on hold"
-msgstr ""
+msgstr "Conf call on hold"
 
 #: libtelephonyservice/callnotification.cpp:53
 #, qt-format
 msgid "%1 call on hold"
-msgstr ""
+msgstr "%1 call on hold"
 
 #: libtelephonyservice/callnotification.cpp:56
 msgid "Conf call ended"
-msgstr ""
+msgstr "Conf call ended"
 
 #: libtelephonyservice/callnotification.cpp:56
 #, qt-format
 msgid "%1 call ended"
-msgstr ""
+msgstr "%1 call ended"
 
 #: libtelephonyservice/callnotification.cpp:59
 #, qt-format
 msgid "%1 call declined"
-msgstr ""
+msgstr "%1 call declined"
 
 #: libtelephonyservice/contactwatcher.cpp:157
 msgid "Private Number"
