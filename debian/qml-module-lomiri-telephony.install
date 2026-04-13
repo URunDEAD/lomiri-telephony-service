@@ -1,3 +1,2 @@
-usr/lib/*/qt5/qml/Lomiri/Telephony/liblomiritelephonyservice-qml.so
+usr/lib/*/qt5/qml/Lomiri/Telephony/lib*telephonyservice-qml.so
 usr/lib/*/qt5/qml/Lomiri/Telephony/qmldir
-

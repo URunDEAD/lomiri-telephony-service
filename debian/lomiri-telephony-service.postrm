@@ -3,6 +3,7 @@ set -e
 
 if [ "$1" = "purge" ] ; then
     rm -rf /var/lib/lightdm-data/*/lomiri-telephony-service/
+    rm -rf /var/lib/lightdm-data/*/telephony-service/
 fi
 
 #DEBHELPER#
