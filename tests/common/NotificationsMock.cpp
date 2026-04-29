@@ -67,7 +67,10 @@ void NotificationsMock::CloseNotification(uint id)
 
 QString NotificationsMock::GetServerInformation(QString &vendor, QString &version, QString &spec_version)
 {
-    return QString();
+    vendor = QStringLiteral("Lomiri");
+    version = QStringLiteral("1.0");
+    spec_version = QStringLiteral("1.2");
+    return QStringLiteral("NotificationsMock");
 }
 
 int main(int argc, char **argv)
