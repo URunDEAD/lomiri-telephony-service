@@ -194,8 +194,8 @@ void MockTextChannel::messageReceived(const QString &message, const QVariantMap 
 
     Tp::MessagePart header;
     header["message-token"] = QDBusVariant(info["SentTime"].toString() +"-" + QString::number(mMessageCounter++));
-    header["message-received"] = QDBusVariant(QDateTime::currentDateTime().toTime_t());
-    header["message-sent"] = QDBusVariant(QDateTime::fromString(info["SentTime"].toString(), Qt::ISODate).toTime_t());
+    header["message-received"] = QDBusVariant(QDateTime::currentDateTime().toSecsSinceEpoch());
+    header["message-sent"] = QDBusVariant(QDateTime::fromString(info["SentTime"].toString(), Qt::ISODate).toSecsSinceEpoch());
     header["message-sender"] = QDBusVariant(mTargetHandle);
     header["message-sender-id"] = QDBusVariant(mRecipients.first());
     header["message-type"] = QDBusVariant(Tp::ChannelTextMessageTypeNormal);
@@ -213,9 +213,9 @@ void MockTextChannel::cellBroadcastReceived(const QString &message, CellBroadcas
     body["content"] = QDBusVariant(message);
 
     Tp::MessagePart header;
-    header["message-token"] = QDBusVariant(QDateTime::currentDateTime().toTime_t());
-    header["message-received"] = QDBusVariant(QDateTime::currentDateTime().toTime_t());
-    header["message-sent"] = QDBusVariant(QDateTime::currentDateTime().toTime_t());
+    header["message-token"] = QDBusVariant(QDateTime::currentDateTime().toSecsSinceEpoch());
+    header["message-received"] = QDBusVariant(QDateTime::currentDateTime().toSecsSinceEpoch());
+    header["message-sent"] = QDBusVariant(QDateTime::currentDateTime().toSecsSinceEpoch());
     header["message-sender"] = QDBusVariant(mTargetHandle);
     header["message-sender-id"] = QDBusVariant(CellBroadcast::CELLBROADCAST_IDENTIFIER);
     header[CellBroadcast::CELLBROADCAST_IDENTIFIER_TYPE] = QDBusVariant(type);
@@ -235,8 +235,8 @@ void MockTextChannel::mmsReceived(const QString &id, const QVariantMap &properti
     Tp::MessagePart header;
     header["message-token"] = QDBusVariant(id);
     header["message-sender"] = QDBusVariant(mTargetHandle);
-    header["message-received"] = QDBusVariant(QDateTime::fromString(properties["Date"].toString(), Qt::ISODate).toTime_t());
-    header["message-sent"] = QDBusVariant(QDateTime::fromString(properties["SentTime"].toString(), Qt::ISODate).toTime_t());
+    header["message-received"] = QDBusVariant(QDateTime::fromString(properties["Date"].toString(), Qt::ISODate).toSecsSinceEpoch());
+    header["message-sent"] = QDBusVariant(QDateTime::fromString(properties["SentTime"].toString(), Qt::ISODate).toSecsSinceEpoch());
     header["message-type"] = QDBusVariant(Tp::DeliveryStatusDelivered);
     if (!subject.isEmpty())
     {
