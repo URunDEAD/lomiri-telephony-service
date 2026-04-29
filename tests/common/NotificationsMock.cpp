@@ -35,6 +35,7 @@ public:
     Q_SCRIPTABLE uint Notify(QString app_name, uint replaces_id, QString app_icon, QString summary, QString body, QStringList actions, QVariantMap hints, int expire_timeout);
     Q_SCRIPTABLE void CloseNotification(uint id);
     Q_SCRIPTABLE QString GetServerInformation(QString& vendor, QString& version, QString& spec_version);
+    Q_SCRIPTABLE QStringList GetCapabilities();
 
     // Mock specific method
     Q_SCRIPTABLE void MockInvokeAction(uint id, QString action_key);
@@ -71,6 +72,11 @@ QString NotificationsMock::GetServerInformation(QString &vendor, QString &versio
     version = QStringLiteral("1.0");
     spec_version = QStringLiteral("1.2");
     return QStringLiteral("NotificationsMock");
+}
+
+QStringList NotificationsMock::GetCapabilities()
+{
+    return QStringList() << QStringLiteral("actions") << QStringLiteral("body") << QStringLiteral("body-markup");
 }
 
 int main(int argc, char **argv)
