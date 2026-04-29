@@ -50,7 +50,27 @@ Q_SIGNALS:
 
 uint NotificationsMock::Notify(QString app_name, uint replaces_id, QString app_icon, QString summary, QString body, QStringList actions, QVariantMap hints, int expire_timeout)
 {
-    Q_EMIT MockNotificationReceived(app_name, replaces_id, app_icon, summary, body, actions, hints, expire_timeout);
+    QString effectiveIcon = app_icon;
+    if (effectiveIcon.isEmpty()) {
+        const QStringList iconHintKeys = {
+            QStringLiteral("image-path"),
+            QStringLiteral("image_path"),
+            QStringLiteral("icon-name")
+        };
+
+        for (const QString &key : iconHintKeys) {
+            const QVariant value = hints.value(key);
+            if (value.canConvert<QString>()) {
+                const QString candidate = value.toString();
+                if (!candidate.isEmpty()) {
+                    effectiveIcon = candidate;
+                    break;
+                }
+            }
+        }
+    }
+
+    Q_EMIT MockNotificationReceived(app_name, replaces_id, effectiveIcon, summary, body, actions, hints, expire_timeout);
     static uint id = 1;
     return (replaces_id != 0 ? replaces_id : id++);
 }
