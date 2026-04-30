@@ -35,6 +35,7 @@ public:
     Q_SCRIPTABLE uint Notify(QString app_name, uint replaces_id, QString app_icon, QString summary, QString body, QStringList actions, QVariantMap hints, int expire_timeout);
     Q_SCRIPTABLE void CloseNotification(uint id);
     Q_SCRIPTABLE QString GetServerInformation(QString& vendor, QString& version, QString& spec_version);
+    Q_SCRIPTABLE QStringList GetCapabilities();
 
     // Mock specific method
     Q_SCRIPTABLE void MockInvokeAction(uint id, QString action_key);
@@ -49,7 +50,27 @@ Q_SIGNALS:
 
 uint NotificationsMock::Notify(QString app_name, uint replaces_id, QString app_icon, QString summary, QString body, QStringList actions, QVariantMap hints, int expire_timeout)
 {
-    Q_EMIT MockNotificationReceived(app_name, replaces_id, app_icon, summary, body, actions, hints, expire_timeout);
+    QString effectiveIcon = app_icon;
+    if (effectiveIcon.isEmpty()) {
+        const QStringList iconHintKeys = {
+            QStringLiteral("image-path"),
+            QStringLiteral("image_path"),
+            QStringLiteral("icon-name")
+        };
+
+        for (const QString &key : iconHintKeys) {
+            const QVariant value = hints.value(key);
+            if (value.canConvert<QString>()) {
+                const QString candidate = value.toString();
+                if (!candidate.isEmpty()) {
+                    effectiveIcon = candidate;
+                    break;
+                }
+            }
+        }
+    }
+
+    Q_EMIT MockNotificationReceived(app_name, replaces_id, effectiveIcon, summary, body, actions, hints, expire_timeout);
     static uint id = 1;
     return (replaces_id != 0 ? replaces_id : id++);
 }
@@ -67,7 +88,15 @@ void NotificationsMock::CloseNotification(uint id)
 
 QString NotificationsMock::GetServerInformation(QString &vendor, QString &version, QString &spec_version)
 {
-    return QString();
+    vendor = QStringLiteral("Lomiri");
+    version = QStringLiteral("1.0");
+    spec_version = QStringLiteral("1.2");
+    return QStringLiteral("NotificationsMock");
+}
+
+QStringList NotificationsMock::GetCapabilities()
+{
+    return QStringList() << QStringLiteral("actions") << QStringLiteral("body") << QStringLiteral("body-markup");
 }
 
 int main(int argc, char **argv)
