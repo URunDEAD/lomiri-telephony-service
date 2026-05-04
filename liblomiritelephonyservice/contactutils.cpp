@@ -34,7 +34,7 @@ QContactManager *sharedManager(const QString &engine)
     if (qEnvironmentVariableIsSet("TELEPHONY_SERVICE_TEST")) {
         finalEngine = QStringLiteral("memory");
     } else if (engine.isEmpty()) {
-        finalEngine = qEnvironmentVariable("LOMIRI_CONTACT_BACKEND", "galera");
+        finalEngine = qEnvironmentVariable("LOMIRI_CONTACT_BACKEND", "org.nemomobile.contacts.sqlite");
     }
     static QContactManager *instance = new QContactManager(finalEngine);
     return instance;
