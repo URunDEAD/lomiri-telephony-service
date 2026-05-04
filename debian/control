@@ -82,7 +82,7 @@ Package: qml-module-lomiri-telephony
 Architecture: any
 Multi-Arch: same
 Depends: lomiri-schemas,
-         qtcontact5-galera[!s390x],
+         libqt5contact5-plugin-sqlite,
          lomiri-telephony-service (>= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
