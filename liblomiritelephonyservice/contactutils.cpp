@@ -31,15 +31,10 @@ namespace ContactUtils
 QContactManager *sharedManager(const QString &engine)
 {
     QString finalEngine = engine;
-    if (!qgetenv("TELEPHONY_SERVICE_TEST").isEmpty()) {
+    if (qEnvironmentVariableIsSet("TELEPHONY_SERVICE_TEST")) {
         finalEngine = QStringLiteral("memory");
-    } else if (finalEngine.isEmpty())) {
-        QString backend = QString::fromUtf8(qgetenv("LOMIRI_CONTACT_BACKEND"));
-        if (!backend.isEmpty()) {
-            finalEngine = backend;
-        } else {
-            finalEngine = QStringLiteral("galera");
-        }
+    } else if (engine.isEmpty()) {
+        finalEngine = qEnvironmentVariable("LOMIRI_CONTACT_BACKEND", "galera");
     }
     static QContactManager *instance = new QContactManager(finalEngine);
     return instance;
