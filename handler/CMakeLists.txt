@@ -15,6 +15,7 @@ set(qt_SRCS
     handlerdbus.cpp
     messagejob.cpp
     messagesendingjob.cpp
+    ofonovoicecallagent.cpp
     powerdaudiomodemediator.cpp
     powerddbus.cpp
     texthandler.cpp
@@ -25,6 +26,14 @@ set(handler_SRCS main.cpp ${qt_SRCS})
 qt5_add_dbus_adaptor(handler_SRCS Handler.xml handler/handlerdbus.h HandlerDBus)
 qt5_add_dbus_adaptor(handler_SRCS ChatStartingJob.xml handler/chatstartingjob.h ChatStartingJob)
 qt5_add_dbus_adaptor(handler_SRCS MessageSendingJob.xml handler/messagesendingjob.h MessageSendingJob)
+qt5_add_dbus_adaptor(handler_SRCS org.ofono.VoiceCallAgent.xml handler/ofonovoicecallagent.h OfonoVoiceCallAgent ofonovoicecallagentadaptor OfonoVoiceCallAgentAdaptor)
+
+set_source_files_properties(
+    "${CMAKE_CURRENT_SOURCE_DIR}/org.ofono.Manager.xml"
+    PROPERTIES INCLUDE "${CMAKE_SOURCE_DIR}/handler/ofonotypes.h"
+)
+qt5_add_dbus_interface(handler_SRCS org.ofono.Manager.xml OfonoManagerInterface)
+qt5_add_dbus_interface(handler_SRCS org.ofono.VoiceCallManager.xml OfonoVoiceCallManagerInterface)
 
 include_directories(
     ${TP_QT5_INCLUDE_DIRS}

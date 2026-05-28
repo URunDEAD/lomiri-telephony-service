@@ -29,6 +29,8 @@ class QTimer;
 
 static const int DTMF_LOCAL_PLAYBACK_DURATION = 200; /* in milliseconds */
 static const int WAITING_PLAYBACK_DURATION = 8000; /* in milliseconds */
+static const int RINGBACK_TONE_DURATION = 1500; /* in milliseconds */
+static const int RINGBACK_TONE_PAUSE = 4000; /* in milliseconds */
 static const uint WAITING_TONE = 79;
 static const uint CALL_ENDED_TONE = 257;
 static const uint DIALING_TONE = 66;
@@ -51,16 +53,21 @@ public Q_SLOTS:
     void playCallEndedTone();
     void playDialingTone();
     void playRingingTone();
+    void playRingbackTone();
+    void stopRingbackTone();
     void stopTone();
 
 private Q_SLOTS:
     void stopDTMFTone();
     bool startEventTone(uint key);
+    void onRingbackPlaybackTimeout();
 
 private:
     explicit ToneGenerator(QObject *parent = 0);
     QTimer* mDTMFPlaybackTimer;
     QTimer* mWaitingPlaybackTimer;
+    QTimer* mRingbackPlaybackTimer;
+    QTimer* mRingbackPauseTimer;
 };
 
 #endif // TONEGENERATOR_H

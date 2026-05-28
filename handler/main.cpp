@@ -23,6 +23,7 @@
 #include "callhandler.h"
 #include "handler.h"
 #include "handlerdbus.h"
+#include "ofonovoicecallagent.h"
 #include "telepathyhelper.h"
 #include "texthandler.h"
 #include <QCoreApplication>
@@ -56,6 +57,7 @@ int main(int argc, char **argv)
     }
 
     HandlerDBus dbus;
+    OfonoVoiceCallAgent::instance();
     Handler *handler = new Handler();
     QObject::connect(TelepathyHelper::instance(), &TelepathyHelper::setupReady, [&]() {
         TelepathyHelper::instance()->registerClient(handler, "TelephonyServiceHandler");
