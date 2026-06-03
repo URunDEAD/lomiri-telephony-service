@@ -33,17 +33,29 @@
 #define TONEGEN_DBUS_IFACE_NAME TONEGEN_DBUS_SERVICE_NAME
 
 ToneGenerator::ToneGenerator(QObject *parent) :
-    QObject(parent), mDTMFPlaybackTimer(nullptr), mWaitingPlaybackTimer(new QTimer(this))
+    QObject(parent),
+    mDTMFPlaybackTimer(nullptr),
+    mWaitingPlaybackTimer(new QTimer(this)),
+    mRingbackPlaybackTimer(new QTimer(this)),
+    mRingbackPauseTimer(new QTimer(this))
 {
-    // the waiting tone is played in loop
     connect(mWaitingPlaybackTimer, SIGNAL(timeout()), this, SLOT(playWaitingTone()));
     mWaitingPlaybackTimer->setSingleShot(true);
+
+    connect(mRingbackPlaybackTimer, &QTimer::timeout,
+            this, &ToneGenerator::onRingbackPlaybackTimeout);
+    mRingbackPlaybackTimer->setSingleShot(true);
+
+    connect(mRingbackPauseTimer, &QTimer::timeout,
+            this, &ToneGenerator::playRingbackTone);
+    mRingbackPauseTimer->setSingleShot(true);
 }
 
 ToneGenerator::~ToneGenerator()
 {
     this->stopDTMFTone();
     this->stopWaitingTone();
+    this->stopRingbackTone();
 }
 
 ToneGenerator *ToneGenerator::instance()
@@ -134,4 +146,25 @@ void ToneGenerator::playDialingTone()
 void ToneGenerator::playRingingTone()
 {
     startEventTone(RINGING_TONE);
+}
+
+void ToneGenerator::playRingbackTone()
+{
+    if (mRingbackPlaybackTimer->isActive() || mRingbackPauseTimer->isActive())
+        return;
+    playDialingTone();
+    mRingbackPlaybackTimer->start(RINGBACK_TONE_DURATION);
+}
+
+void ToneGenerator::stopRingbackTone()
+{
+    mRingbackPlaybackTimer->stop();
+    mRingbackPauseTimer->stop();
+    stopTone();
+}
+
+void ToneGenerator::onRingbackPlaybackTimeout()
+{
+    stopTone();
+    mRingbackPauseTimer->start(RINGBACK_TONE_PAUSE);
 }
