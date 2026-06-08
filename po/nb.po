@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: 2025-05-18 15:49+0000\n"
+"PO-Revision-Date: 2026-06-12 09:36+0000\n"
 "Last-Translator: Ida Brenna <ida@larald.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/lomiri/"
 "telephony-service/nb_NO/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:03+0000\n"
 
 #: indicator/telephony-service-call.desktop.in:4
@@ -101,7 +101,7 @@ msgstr "Telefontjeneste-godkjenning"
 
 #: indicator/authhandler.cpp:72
 msgid "Authentication failed. Do you want to review your credentials?"
-msgstr "Autentisering mislyktes. VIl du se gjennom akkreditivene dine?"
+msgstr "Autentisering mislyktes. Vil du se gjennom akkreditivene dine?"
 
 #: indicator/authhandler.cpp:91
 msgid "Yes"
@@ -275,7 +275,7 @@ msgstr "Vis gruppe"
 
 #: indicator/textchannelobserver.cpp:367 indicator/ussdindicator.cpp:116
 msgid "Ok"
-msgstr "OK"
+msgstr "Ok"
 
 #: indicator/textchannelobserver.cpp:373
 msgid "Save"
