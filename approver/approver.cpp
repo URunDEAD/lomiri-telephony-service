@@ -48,6 +48,7 @@
 #include <QDebug>
 #include <QFeedbackHapticsEffect>
 
+#include <TelepathyQt/PendingComposite>
 #include <TelepathyQt/PendingReady>
 #include <TelepathyQt/ChannelClassSpec>
 #include <TelepathyQt/ClientRegistrar>
@@ -363,15 +364,21 @@ void Approver::onApproved(Tp::ChannelDispatchOperationPtr dispatchOp)
 {
     closeSnapDecision();
 
-    acceptCallChannels(dispatchOp);
+    auto onAccepted = [this, dispatchOp]() {
+        // forward the channel to the handler
+        dispatchOp->handleWith(TELEPHONY_SERVICE_HANDLER);
+        // and launch the dialer-app
+        ApplicationUtils::openUrl(QUrl("dialer:///?view=liveCall"));
+        mDispatchOps.removeAll(dispatchOp);
+    };
 
-    // forward the channel to the handler
-    dispatchOp->handleWith(TELEPHONY_SERVICE_HANDLER);
-
-    // and then launch the dialer-app
-    ApplicationUtils::openUrl(QUrl("dialer:///?view=liveCall"));
-
-    mDispatchOps.removeAll(dispatchOp);
+    auto *pendingAccept = acceptCallChannels(dispatchOp);
+    if (!pendingAccept) {
+        onAccepted();
+        return;
+    }
+    connect(pendingAccept, &Tp::PendingOperation::finished, this,
+            [onAccepted](Tp::PendingOperation *) { onAccepted(); });
 }
 
 void Approver::onHangUpAndApproved(Tp::ChannelDispatchOperationPtr dispatchOp)
@@ -383,15 +390,21 @@ void Approver::onHangUpAndApproved(Tp::ChannelDispatchOperationPtr dispatchOp)
         CallManager::instance()->foregroundCall()->endCall();
     }
 
-    acceptCallChannels(dispatchOp);
+    auto onAccepted = [this, dispatchOp]() {
+        // forward the channel to the handler
+        dispatchOp->handleWith(TELEPHONY_SERVICE_HANDLER);
+        // and launch the dialer-app
+        ApplicationUtils::openUrl(QUrl("application:///lomiri-dialer-app.desktop"));
+        mDispatchOps.removeAll(dispatchOp);
+    };
 
-    // forward the channel to the handler
-    dispatchOp->handleWith(TELEPHONY_SERVICE_HANDLER);
-
-    // and then launch the dialer-app
-    ApplicationUtils::openUrl(QUrl("application:///lomiri-dialer-app.desktop"));
-
-    mDispatchOps.removeAll(dispatchOp);
+    auto *pendingAccept = acceptCallChannels(dispatchOp);
+    if (!pendingAccept) {
+        onAccepted();
+        return;
+    }
+    connect(pendingAccept, &Tp::PendingOperation::finished, this,
+            [onAccepted](Tp::PendingOperation *) { onAccepted(); });
 }
 
 void Approver::onRejected(Tp::ChannelDispatchOperationPtr dispatchOp)
@@ -597,15 +610,20 @@ bool Approver::showSnapDecision(const Tp::ChannelDispatchOperationPtr dispatchOp
     return true;
 }
 
-void Approver::acceptCallChannels(const Tp::ChannelDispatchOperationPtr dispatchOp)
+Tp::PendingComposite *Approver::acceptCallChannels(const Tp::ChannelDispatchOperationPtr &dispatchOp)
 {
     // accept all channels
+    QList<Tp::PendingOperation*> pendingAccepts;
     Q_FOREACH(Tp::ChannelPtr channel, dispatchOp->channels()) {
         Tp::CallChannelPtr callChannel = Tp::CallChannelPtr::dynamicCast(channel);
         if (callChannel && isIncoming(callChannel) && callChannel->callState() != Tp::CallStateActive) {
-            callChannel->accept();
+            pendingAccepts.append(callChannel->accept());
         }
     }
+    if (pendingAccepts.isEmpty()) {
+        return nullptr;
+    }
+    return new Tp::PendingComposite(pendingAccepts, false, dispatchOp);
 }
 
 Tp::ChannelDispatchOperationPtr Approver::dispatchOperationForIncomingCall()
