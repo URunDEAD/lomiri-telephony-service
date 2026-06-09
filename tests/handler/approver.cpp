@@ -99,7 +99,12 @@ void Approver::processChannels()
             }
 
             if (dispatchOperation->possibleHandlers().contains(TELEPHONY_SERVICE_HANDLER)) {
-                dispatchOperation->handleWith(TELEPHONY_SERVICE_HANDLER);
+                auto *ret = dispatchOperation->handleWith(TELEPHONY_SERVICE_HANDLER);
+                connect(ret, &Tp::PendingOperation::finished, this, [](Tp::PendingOperation *op) {
+                    if (op->isError()) {
+                        qWarning() << "handleWith failed:" << op->errorName() << op->errorMessage();
+                    }
+                });
                 mDispatchOps.removeAll(dispatchOperation);
             }
             // FIXME: this shouldn't happen, but in any case, we need to check what to do when
@@ -126,7 +131,12 @@ void Approver::acceptCall(bool callAcceptOnChannel)
         }
 
         auto onAccepted = [this, dispatchOp]() {
-            dispatchOp->handleWith(TELEPHONY_SERVICE_HANDLER);
+            auto *ret = dispatchOp->handleWith(TELEPHONY_SERVICE_HANDLER);
+            connect(ret, &Tp::PendingOperation::finished, this, [](Tp::PendingOperation *op) {
+                if (op->isError()) {
+                    qWarning() << "handleWith failed:" << op->errorName() << op->errorMessage();
+                }
+            });
             mDispatchOps.removeAll(dispatchOp);
         };
 

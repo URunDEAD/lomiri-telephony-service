@@ -366,7 +366,12 @@ void Approver::onApproved(Tp::ChannelDispatchOperationPtr dispatchOp)
 
     auto onAccepted = [this, dispatchOp]() {
         // forward the channel to the handler
-        dispatchOp->handleWith(TELEPHONY_SERVICE_HANDLER);
+        auto *ret = dispatchOp->handleWith(TELEPHONY_SERVICE_HANDLER);
+        connect(ret, &Tp::PendingOperation::finished, this, [](Tp::PendingOperation *op) {
+            if (op->isError()) {
+                qWarning() << "handleWith failed:" << op->errorName() << op->errorMessage();
+            }
+        });
         // and launch the dialer-app
         ApplicationUtils::openUrl(QUrl("dialer:///?view=liveCall"));
         mDispatchOps.removeAll(dispatchOp);
@@ -392,7 +397,12 @@ void Approver::onHangUpAndApproved(Tp::ChannelDispatchOperationPtr dispatchOp)
 
     auto onAccepted = [this, dispatchOp]() {
         // forward the channel to the handler
-        dispatchOp->handleWith(TELEPHONY_SERVICE_HANDLER);
+        auto *ret = dispatchOp->handleWith(TELEPHONY_SERVICE_HANDLER);
+        connect(ret, &Tp::PendingOperation::finished, this, [](Tp::PendingOperation *op) {
+            if (op->isError()) {
+                qWarning() << "handleWith failed:" << op->errorName() << op->errorMessage();
+            }
+        });
         // and launch the dialer-app
         ApplicationUtils::openUrl(QUrl("application:///lomiri-dialer-app.desktop"));
         mDispatchOps.removeAll(dispatchOp);
