@@ -113,7 +113,8 @@ function(generate_telepathy_test TESTNAME)
 
     set(TASKS --task gnome-keyring-daemon -p -r -p -d --task-name gnome-keyring --ignore-return
               --task ${CMAKE_BINARY_DIR}/tests/common/NotificationsMock --task-name notifications --ignore-return
-              --task "${DCONF_SERVICE}" --task-name dconf-service --ignore-return
+              # dconf-service doesn't depend on notifications, but some tests do and we need to make sure it ends up in the --wait-for dependency chain
+              --task "${DCONF_SERVICE}" --task-name dconf-service --wait-for org.freedesktop.Notifications --ignore-return
               --task dconf -p write -p /org/gnome/empathy/use-conn -p false --task-name dconf-write --wait-for ca.desrt.dconf --ignore-return
               --task /usr/lib/telepathy/mission-control-5 --task-name mission-control --wait-for ca.desrt.dconf --ignore-return
               --task ${CMAKE_BINARY_DIR}/tests/common/mock/telepathy-mock --task-name telepathy-mock --wait-for org.freedesktop.Telepathy.MissionControl5 --ignore-return
