@@ -30,6 +30,7 @@
 #include <QContact>
 #include <QMap>
 #include <TelepathyQt/AbstractClientApprover>
+#include <TelepathyQt/PendingComposite>
 #include <TelepathyQt/PendingReady>
 #include <TelepathyQt/ChannelDispatchOperation>
 #include <QFeedbackHapticsEffect>
@@ -56,7 +57,7 @@ public:
     bool showSnapDecision(const Tp::ChannelDispatchOperationPtr dispatchOperation,
                           const Tp::ChannelPtr channel,
                           const QContact &contact = QContact());
-    void acceptCallChannels(const Tp::ChannelDispatchOperationPtr dispatchOp);
+    Tp::PendingComposite *acceptCallChannels(const Tp::ChannelDispatchOperationPtr &dispatchOp);
     bool handleMediaKey(bool doubleClick);
 
 protected:

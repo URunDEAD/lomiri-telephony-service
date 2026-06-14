@@ -19,6 +19,7 @@
 #include "approver.h"
 #include <QDebug>
 
+#include <TelepathyQt/PendingComposite>
 #include <TelepathyQt/PendingReady>
 #include <TelepathyQt/ChannelClassSpec>
 #include <TelepathyQt/ClientRegistrar>
@@ -98,7 +99,12 @@ void Approver::processChannels()
             }
 
             if (dispatchOperation->possibleHandlers().contains(TELEPHONY_SERVICE_HANDLER)) {
-                dispatchOperation->handleWith(TELEPHONY_SERVICE_HANDLER);
+                auto *ret = dispatchOperation->handleWith(TELEPHONY_SERVICE_HANDLER);
+                connect(ret, &Tp::PendingOperation::finished, this, [](Tp::PendingOperation *op) {
+                    if (op->isError()) {
+                        qWarning() << "handleWith failed:" << op->errorName() << op->errorMessage();
+                    }
+                });
                 mDispatchOps.removeAll(dispatchOperation);
             }
             // FIXME: this shouldn't happen, but in any case, we need to check what to do when
@@ -109,20 +115,37 @@ void Approver::processChannels()
 
 void Approver::acceptCall(bool callAcceptOnChannel)
 {
-    Q_FOREACH (Tp::ChannelDispatchOperationPtr dispatchOperation, mDispatchOps) {
-        QList<Tp::ChannelPtr> channels = dispatchOperation->channels();
-        Q_FOREACH (Tp::ChannelPtr channel, channels) {
-            if (callAcceptOnChannel) {
+    Q_FOREACH (Tp::ChannelDispatchOperationPtr dispatchOp, mDispatchOps) {
+        if (!dispatchOp->possibleHandlers().contains(TELEPHONY_SERVICE_HANDLER)) {
+            continue;
+        }
+
+        QList<Tp::PendingOperation*> pendingAccepts;
+        if (callAcceptOnChannel) {
+            Q_FOREACH (Tp::ChannelPtr channel, dispatchOp->channels()) {
                 Tp::CallChannelPtr callChannel = Tp::CallChannelPtr::dynamicCast(channel);
                 if (callChannel) {
-                    callChannel->accept();
+                    pendingAccepts.append(callChannel->accept());
                 }
             }
-            if (dispatchOperation->possibleHandlers().contains(TELEPHONY_SERVICE_HANDLER)) {
-                dispatchOperation->handleWith(TELEPHONY_SERVICE_HANDLER);
-                mDispatchOps.removeAll(dispatchOperation);
-                break;
-            }
+        }
+
+        auto onAccepted = [this, dispatchOp]() {
+            auto *ret = dispatchOp->handleWith(TELEPHONY_SERVICE_HANDLER);
+            connect(ret, &Tp::PendingOperation::finished, this, [](Tp::PendingOperation *op) {
+                if (op->isError()) {
+                    qWarning() << "handleWith failed:" << op->errorName() << op->errorMessage();
+                }
+            });
+            mDispatchOps.removeAll(dispatchOp);
+        };
+
+        if (pendingAccepts.isEmpty()) {
+            onAccepted();
+        } else {
+            auto *composite = new Tp::PendingComposite(pendingAccepts, false, dispatchOp);
+            connect(composite, &Tp::PendingOperation::finished, this,
+                    [onAccepted](Tp::PendingOperation *) { onAccepted(); });
         }
     }
 }
