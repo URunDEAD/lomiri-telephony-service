@@ -3,36 +3,24 @@
 
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
-export DPKG_GENSYMBOLS_CHECK_LEVEL=4
 
-DEB_HOST_ARCH := $(shell dpkg-architecture -qDEB_HOST_ARCH)
-# Skip qml tests on the archs they are known to be flaky with current configuration
-# Ref.: https://bugs.launchpad.net/ubuntu/+source/mesa/+bug/1585942
-qmltestskip_architectures := arm64 powerpc s390x
-
-# Add migrations add-on when build on Ubuntu & original name is available.
-DH_MIGRATIONS = $(shell type dh_migrations >/dev/null 2>&1 && echo "--with migrations")
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 %:
-	dh $@ $(DH_MIGRATIONS)
-
-override_dh_missing:
-	dh_missing --fail-missing
+	dh $@
 
 override_dh_auto_configure:
-ifeq ($(DEB_HOST_ARCH),$(findstring $(DEB_HOST_ARCH), $(qmltestskip_architectures)))
 	dh_auto_configure -- -DCMAKE_BUILD_TYPE=Debug \
-	                     -DSKIP_QML_TESTS="on"
-else
-	dh_auto_configure -- -DCMAKE_BUILD_TYPE=Debug
-endif
+		-DSKIP_QML_TESTS=$(if $(filter nocheck,$(DEB_BUILD_OPTIONS)),ON,OFF)
 
+# --no-parallel might help tests pass when tested by Jenkins
 override_dh_auto_test:
-ifeq ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
 	QT_QPA_PLATFORM=minimal CTEST_OUTPUT_ON_FAILURE=1 dh_auto_test --no-parallel
-endif
 
 override_dh_installsystemduser:
-	dh_installsystemduser --package=lomiri-telephony-service --name=lomiri-indicator-telephony-service
 	dh_installsystemduser --package=lomiri-telephony-service --name=lomiri-telephony-service-approver
+	dh_installsystemduser --package=lomiri-telephony-service --name=lomiri-indicator-telephony-service
 	dh_installsystemduser --package=lomiri-telephony-service --name=lomiri-telephony-service-handler
+
+get-orig-source:
+	uscan --noconf --force-download --rename --download-current-version --destdir=..

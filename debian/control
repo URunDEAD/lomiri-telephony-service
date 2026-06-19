@@ -1,75 +1,77 @@
 Source: lomiri-telephony-service
+Standards-Version: 4.7.4
+Maintainer: UBports Developers <developers@ubports.com>
+Uploaders:
+ Mike Gabriel <sunweaver@debian.org>,
+ Marius Gripsgard <marius@ubports.com>,
 Section: libs
-Priority: optional
-Maintainer: UBports developers <devs@ubports.com>
-Build-Depends: cmake,
-               dbus-test-runner,
+Build-Depends: debhelper-compat (= 13),
+               dh-sequence-user-session-migration,
+               cmake,
+               dbus-test-runner <!nocheck>,
                dconf-cli,
-               debhelper-compat (= 12),
-               dh-migrations | hello,
                gnome-keyring,
-               liblomirihistoryservice-dev,
                libicu-dev,
+               liblomiri-url-dispatcher-dev,
+               liblomirihistoryservice-dev,
                libmessaging-menu-dev,
                libnotify-dev,
                libphonenumber-dev,
-               libtelepathy-qt5-dev,
                libprotobuf-dev,
                libpulse-dev,
-               liblomiri-url-dispatcher-dev,
-               pkg-config,
+               libtelepathy-qt5-dev,
+               libusermetricsinput-dev,
+               pkgconf,
                python3,
-               qml-module-qttest,
-               qtbase5-dev (>= 5.0),
-               qtdeclarative5-dev (>= 5.0),
-               qtdeclarative5-dev-tools (>= 5.0),
-               qtfeedback5-dev,
                qml-module-lomiri-components,
                qml-module-lomiri-layouts,
                qml-module-lomiri-performancemetrics,
-               qml-module-lomiri-test,
-               qtmultimedia5-dev (>= 5.0),
-               qtpim5-dev (>= 5),
-               libusermetricsinput-dev,
+               qml-module-lomiri-test <!nocheck>,
+               qml-module-qttest <!nocheck>,
+               qtbase5-dev,
+               qtdeclarative5-dev,
+               qtdeclarative5-dev-tools,
+               qtfeedback5-dev,
+               qtmultimedia5-dev,
+               qtpim5-dev,
                telepathy-mission-control-5,
                xauth <!nocheck>,
                xvfb <!nocheck>,
-Standards-Version: 3.9.4
-Homepage: https://gitlab.com/ubports/development/core/lomiri-telephony-service
-Vcs-Git: https://gitlab.com/ubports/development/core/lomiri-telephony-service.git
 Vcs-Browser: https://gitlab.com/ubports/development/core/lomiri-telephony-service
-X-Ubuntu-Use-Langpack: yes
+Vcs-Git: https://gitlab.com/ubports/development/core/lomiri-telephony-service.git
+Homepage: https://gitlab.com/ubports/development/core/lomiri-telephony-service
 
 Package: lomiri-telephony-service
 Architecture: any
 Multi-Arch: foreign
-Conflicts: phone-app
-Replaces: phone-app,
-          telephony-service (<< 0.6.0~)
-Breaks: telephony-service (<< 0.6.0~)
-Provides: telephony-service (= ${binary:Version})
-Depends: lomiri-schemas,
-         lomiri-history-service,
+Section: misc
+Depends: dconf-cli,
          libnotify4,
-         telepathy-mission-control-5,
+         lomiri-history-service,
+         lomiri-schemas,
          lomiri-sounds,
-         tone-generator[!s390x],
-         libusermetricsinput1,
-         dconf-cli,
          python3,
          python3-dbus,
          python3-gi,
+         telepathy-mission-control-5,
+         tone-generator,
          ${misc:Depends},
          ${shlibs:Depends},
-Suggests: telepathy-ofono
-Description: Telephony service components for Lomiri - backend
+Suggests: telepathy-ofono,
+Conflicts: phone-app,
+Replaces: phone-app,
+          telephony-service (<< 0.6.0~),
+Breaks: telephony-service (<< 0.6.0~),
+Provides: telephony-service (= ${binary:Version}),
+Description: Telephony service components for Lomiri - service daemon
  Telephony service components for Lomiri.
  .
- This package contains the backend components providing the telephony 
+ This package contains the backend components providing the telephony
  features such as calling and texting.
 
 Package: telephony-service
-Depends: lomiri-telephony-service, ${misc:Depends}
+Depends: lomiri-telephony-service,
+         ${misc:Depends},
 Architecture: all
 Priority: optional
 Section: oldlibs
@@ -84,10 +86,10 @@ Depends: lomiri-schemas,
          lomiri-telephony-service (>= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
-Suggests: telepathy-ofono
+Suggests: telepathy-ofono,
 Breaks: qml-module-lomiri-telephony0.1 (<< 0.6.0~),
 Replaces: qml-module-lomiri-telephony0.1 (<< 0.6.0~),
-Description: Telephony service components for Lomiri - QML plugin
+Description: Telephony service components for Lomiri - Telephony QML plugin
  Telephony service components for Lomiri.
  .
  This package contains the QML plugin providing the features from the telephony
@@ -96,9 +98,9 @@ Description: Telephony service components for Lomiri - QML plugin
 Package: qml-module-lomiri-telephony0.1
 Architecture: any
 Multi-Arch: same
-Depends: ${misc:Depends},
+Depends: qml-module-lomiri-telephony (= ${binary:Version}),
+         ${misc:Depends},
          ${shlibs:Depends},
-         qml-module-lomiri-telephony (= ${binary:Version}),
 Description: Telephony service components for Lomiri - QML plugin (transitional package)
  Telephony service components for Lomiri.
  .
@@ -110,12 +112,12 @@ Description: Telephony service components for Lomiri - QML plugin (transitional 
 Package: qml-module-lomiri-telephony-phonenumber
 Architecture: any
 Multi-Arch: same
-Depends: ${misc:Depends},
+Depends: qml-module-lomiri-components,
+         ${misc:Depends},
          ${shlibs:Depends},
-         qml-module-lomiri-components
 Breaks: qml-module-lomiri-telephony-phonenumber0.1 (<< 0.6.0~),
 Replaces: qml-module-lomiri-telephony-phonenumber0.1 (<< 0.6.0~),
-Description: Telephony PhoneNumber components for Lomiri - QML plugin
+Description: Telephony service components for Lomiri - PhoneNumber QML plugin
  Telephony PhoneNumber components for Lomiri.
  .
  This package contains the QML plugin providing the features from the telephony
@@ -124,9 +126,9 @@ Description: Telephony PhoneNumber components for Lomiri - QML plugin
 Package: qml-module-lomiri-telephony-phonenumber0.1
 Architecture: any
 Multi-Arch: same
-Depends: ${misc:Depends},
+Depends: qml-module-lomiri-telephony-phonenumber (= ${binary:Version}),
+         ${misc:Depends},
          ${shlibs:Depends},
-         qml-module-lomiri-telephony-phonenumber (= ${binary:Version}),
 Description: Telephony PhoneNumber components for Lomiri - QML plugin (transitional package)
  Telephony PhoneNumber components for Lomiri.
  .
