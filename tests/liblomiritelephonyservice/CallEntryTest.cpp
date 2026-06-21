@@ -108,7 +108,7 @@ void CallEntryTest::testIsVoicemail()
     // now place a call to a number that is not the voicemail number
     QVariantMap properties;
     properties["Caller"] = callNumber;
-    properties["State"] = "incoming";
+    properties["State"] = "dialing";
     mMockController->placeCall(properties);
     TRY_VERIFY(!mCallChannel.isNull());
     QCOMPARE(mCallChannel->targetContact()->id(), callNumber);
@@ -123,7 +123,6 @@ void CallEntryTest::testIsVoicemail()
 
 void CallEntryTest::onCallChannelAvailable(const Tp::CallChannelPtr &channel)
 {
-    channel->accept();
     connect(channel->becomeReady(Tp::Features() << Tp::CallChannel::FeatureCore
                                                 << Tp::CallChannel::FeatureCallState),
             &Tp::PendingOperation::finished, [this, channel] {
