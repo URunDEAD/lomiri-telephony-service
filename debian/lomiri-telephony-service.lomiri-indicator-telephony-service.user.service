@@ -1,6 +1,6 @@
 [Unit]
 Description=Telephony Service Indicator
-PartOf=graphical-session.target
+PartOf=ubuntu-touch-session.target
 PartOf=ayatana-indicators.target
 After=ayatana-indicators.target
 Requires=ofono-setup.service

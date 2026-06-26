@@ -1,6 +1,6 @@
 [Unit]
 Description=Telephony Service Approver
-Before=lomiri-full-greeter.service lomiri-full-shell.service lomiri-greeter.service lomiri-shell.service
+Before=lomiri-full-greeter.service lomiri-full-shell.service lomiri-greeter.service lomiri-shell.service lomiri.service
 
 [Service]
 Type=dbus
@@ -11,4 +11,4 @@ ExecStart=/usr/bin/lomiri-telephony-service-approver
 Environment=HFD_USE_PRIVILEGED_INTERFACE=1
 
 [Install]
-WantedBy=graphical-session.target
+WantedBy=ubuntu-touch-session.target lomiri.service
