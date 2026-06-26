@@ -11,4 +11,4 @@ ExecStart=/usr/bin/lomiri-telephony-service-approver
 Environment=HFD_USE_PRIVILEGED_INTERFACE=1
 
 [Install]
-WantedBy=graphical-session.target
+WantedBy=ubuntu-touch-session.target lomiri.service
