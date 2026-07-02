@@ -25,6 +25,7 @@
 
 #include <QQmlListProperty>
 #include <QObject>
+#include <QPointer>
 #include <QTime>
 #include <TelepathyQt/CallChannel>
 #include "audiooutput.h"
@@ -177,7 +178,7 @@ Q_SIGNALS:
 private:
     void refreshProperties();
 
-    AccountEntry *mAccount;
+    QPointer<AccountEntry> mAccount;
     Tp::CallChannelPtr mChannel;
     QDBusInterface mMuteInterface;
     QMap<QString, QVariant> mProperties;

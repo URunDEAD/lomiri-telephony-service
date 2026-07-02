@@ -103,6 +103,11 @@ void ChannelObserver::observeChannels(const Tp::MethodInvocationContextPtr<> &co
 
 void ChannelObserver::onCallChannelReady(Tp::PendingOperation *op)
 {
+    if (op->isError()) {
+        qWarning() << "CallChannel::becomeReady failed:" << op->errorName() << op->errorMessage();
+        return;
+    }
+
     Tp::PendingReady *ready = qobject_cast<Tp::PendingReady*>(op);
     if (!ready) {
         qCritical() << "Pending operation is not a pending ready:" << op;
