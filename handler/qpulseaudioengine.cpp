@@ -81,6 +81,7 @@ static void unplug_card_cb(pa_context *c, const pa_card_info *info, int isLast, 
         /* That means that the card used to query card_info was removed */
         pulseEngine->unplugCardCallback();
     }
+    pa_threaded_mainloop_signal(pulseEngine->mainloop(), 0);
 }
 
 static void subscribeCallback(pa_context *context, pa_subscription_event_type_t t, uint32_t idx, void *userdata)
@@ -293,6 +294,7 @@ void QPulseAudioEngineWorker::sinkInfoCallback(const pa_sink_info *info)
     pa_sink_port_info *wired_headset = NULL, *wired_headphone = NULL;
     pa_sink_port_info *preferred = NULL;
     pa_sink_port_info *bluetooth_sco = NULL;
+    pa_sink_port_info *usb_headset = NULL, *usb_device = NULL;
     pa_sink_port_info *speaker_and_wired_headphone = NULL;
     AudioMode audiomodetoset;
     AudioModes modes;
@@ -313,6 +315,12 @@ void QPulseAudioEngineWorker::sinkInfoCallback(const pa_sink_info *info)
             speaker = info->ports[i];
         else if (!strcmp(info->ports[i]->name, "output-bluetooth_sco"))
             bluetooth_sco = info->ports[i];
+        else if (!strcmp(info->ports[i]->name, "output-usb_headset") &&
+                (info->ports[i]->available == PA_PORT_AVAILABLE_YES))
+            usb_headset = info->ports[i];
+        else if (!strcmp(info->ports[i]->name, "output-usb_device") &&
+                (info->ports[i]->available == PA_PORT_AVAILABLE_YES))
+            usb_device = info->ports[i];
         else if (!strcmp(info->ports[i]->name, "output-speaker+wired_headphone") &&
                 (info->ports[i]->available != PA_PORT_AVAILABLE_NO))
             speaker_and_wired_headphone = info->ports[i];
@@ -320,6 +328,12 @@ void QPulseAudioEngineWorker::sinkInfoCallback(const pa_sink_info *info)
 
     if (!earpiece || !speaker)
         return; /* Not the right sink */
+
+    /* Connected usb audio devices are handled like the wired ones */
+    if (!wired_headset && usb_headset)
+        wired_headset = usb_headset;
+    if (!wired_headphone && usb_device)
+        wired_headphone = usb_device;
 
     /* Refresh list of available audio modes */
     modes.append(AudioModeEarpiece);
@@ -369,6 +383,7 @@ void QPulseAudioEngineWorker::sourceInfoCallback(const pa_source_info *info)
 {
     pa_source_port_info *builtin_mic = NULL, *preferred = NULL;
     pa_source_port_info *wired_headset = NULL, *bluetooth_sco = NULL;
+    pa_source_port_info *usb_headset = NULL;
 
     if (info->monitor_of_sink != PA_INVALID_INDEX)
         return;  /* Not the right source */
@@ -383,10 +398,16 @@ void QPulseAudioEngineWorker::sourceInfoCallback(const pa_source_info *info)
             wired_headset = info->ports[i];
         else if (!strcmp(info->ports[i]->name, "input-bluetooth_sco_headset"))
             bluetooth_sco = info->ports[i];
+        else if (!strcmp(info->ports[i]->name, "input-usb_headset") &&
+                (info->ports[i]->available == PA_PORT_AVAILABLE_YES))
+            usb_headset = info->ports[i];
     }
 
     if (!builtin_mic)
         return; /* Not the right source */
+
+    if (!wired_headset && usb_headset)
+        wired_headset = usb_headset;
 
     /* Now to decide which output to be used, depending on the active mode */
     if ((m_audiomode & AudioModeEarpiece) || (m_audiomode & AudioModeSpeaker))
@@ -739,7 +760,9 @@ void QPulseAudioEngineWorker::updateCardCallback(const pa_card_info *info)
             for (int i = 0; i < info->n_ports; i++) {
                 if (info->ports[i] && (info->ports[i]->available == PA_PORT_AVAILABLE_YES) && (
                             !strcmp(info->ports[i]->name, "output-wired_headset") ||
-                            !strcmp(info->ports[i]->name, "output-wired_headphone"))) {
+                            !strcmp(info->ports[i]->name, "output-wired_headphone") ||
+                            !strcmp(info->ports[i]->name, "output-usb_headset") ||
+                            !strcmp(info->ports[i]->name, "output-usb_device"))) {
                     m_handleevent = true;
                     m_audiomodetoset = AudioModeWiredOrEarpiece;
                 }
