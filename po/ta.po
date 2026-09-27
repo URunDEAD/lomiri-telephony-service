@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: 2026-09-06 12:18+0000\n"
+"PO-Revision-Date: 2026-10-02 10:52+0000\n"
 "Last-Translator: Alagirisamy Rengaraj <radhaalagirisamy@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/telephony-"
 "service/ta/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Generator: Weblate 2026.10\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:03+0000\n"
 
 #: indicator/telephony-service-call.desktop.in:4
@@ -64,7 +64,7 @@ msgstr "அழைப்பவர் எண் கிடைக்கவில்�
 
 #: approver/approver.cpp:476
 msgid "Calling from private number"
-msgstr "தனிப்பட்ட எண்ணிலிருந்து வரும் அழைப்பு"
+msgstr "தனிப்பட்ட எண்ணிலிருந்து அழைப்பு"
 
 #: approver/approver.cpp:479
 msgid "Calling from unknown number"
@@ -89,11 +89,11 @@ msgstr "முடி +பதிலளி"
 
 #: approver/approver.cpp:552
 msgid "Decline"
-msgstr "மறு"
+msgstr "மறுத்தல்"
 
 #: approver/approver.cpp:560
 msgid "Message & decline"
-msgstr "செய்தி & மறு"
+msgstr "செய்தியிடு & மறுத்தல்"
 
 #: approver/main.cpp:46
 msgid "Telephony Service Approver"
@@ -102,7 +102,7 @@ msgstr "தொலைப்பேசி சேவை ஒப்பளிப்�
 #: indicator/authhandler.cpp:72
 msgid "Authentication failed. Do you want to review your credentials?"
 msgstr ""
-"உறுதிசெய்தல் தோல்வியுற்றது. உங்கள் சான்றுகளை மீள்ப்பார்வை செய்ய வேண்டுமா?"
+"உறுதிப்படுத்தல் தோல்வியுற்றது. உங்கள் சான்றுகளை மீள்ப்பார்வை செய்ய வேண்டுமா?"
 
 #: indicator/authhandler.cpp:91
 msgid "Yes"
@@ -192,25 +192,25 @@ msgstr "குரல்அஞ்சல்"
 #: indicator/metrics.cpp:42
 #, qt-format
 msgid "<b>%1</b> text messages sent today"
-msgstr "இன்று அனுப்பியகுறுஞ்செய்திகள் - <b>%1</b>"
+msgstr "<b>%1</b> உரைச் செய்திகள் இன்று அனுப்பபட்டது"
 
 #: indicator/metrics.cpp:43
 msgid "No text messages sent today"
-msgstr "இன்று குறுஞ்செய்தி ஏதும் அனுப்பவில்லை"
+msgstr "இன்று உரைச் செய்தி ஏதும் அனுப்பவில்லை"
 
 #: indicator/metrics.cpp:44
 #, qt-format
 msgid "<b>%1</b> text messages received today"
-msgstr "இன்று பெறப்பட்ட குறுஞ்செய்திகள் - <b>%1</b>"
+msgstr "இன்று பெறப்பட்ட உரைச் செய்திகள் - <b>%1</b>"
 
 #: indicator/metrics.cpp:45
 msgid "No text messages received today"
-msgstr "இன்று குறுஞ்செய்தி ஏதும் பெறப்படவில்லை"
+msgstr "இன்று உரைச்செய்தி ஏதும் பெறப்படவில்லை"
 
 #: indicator/metrics.cpp:46
 #, qt-format
 msgid "<b>%1</b> calls received today"
-msgstr "இன்று பெறப்பட்ட அழைப்புக்கள் - <b>%1</b>"
+msgstr "<b>%1</b> இன்று பெறப்பட்ட அழைப்புக்கள்"
 
 #: indicator/metrics.cpp:47
 msgid "No calls received today"
@@ -219,7 +219,7 @@ msgstr "இன்று அழைப்புக்கள் ஏதும் ப
 #: indicator/metrics.cpp:48
 #, qt-format
 msgid "<b>%1</b> calls made today"
-msgstr "இன்று செய்த அழைப்புக்கள் - <b>%1</b>"
+msgstr "<b>%1</b> அழைப்புக்கள் இன்று செய்தவை"
 
 #: indicator/metrics.cpp:49 indicator/metrics.cpp:51
 msgid "No calls made today"
@@ -228,7 +228,7 @@ msgstr "இன்று அழைப்புக்கள் ஏதும் ச
 #: indicator/metrics.cpp:50
 #, qt-format
 msgid "Spent <b>%1</b> minutes in calls today"
-msgstr "இன்று அழைப்புக்களில் <b>%1</b> நிமிடங்கள் செலவானது"
+msgstr "<b>%1</b> நிமிடங்கள் அழைப்புக்களில் இன்று செலவானது"
 
 #: indicator/textchannelobserver.cpp:225
 msgid "Unlock your sim card and try again from the messaging application."
@@ -269,7 +269,7 @@ msgstr "நீங்கள் %1 குழுவில் இணைந்து�
 
 #: indicator/textchannelobserver.cpp:309
 msgid "You joined a new group"
-msgstr "நீங்கள் புதியக் குழுவொன்றில் இணந்துள்ளீர்கள்"
+msgstr "நீங்கள் ஒரு புதிய குழுவில் சேர்ந்துள்ளீர்கள்"
 
 #: indicator/textchannelobserver.cpp:328
 msgid "View Group"
@@ -285,7 +285,7 @@ msgstr "சேமி"
 
 #: indicator/textchannelobserver.cpp:468
 msgid "Emergency Alert"
-msgstr "அவசர எச்சரிக்கை அழைப்பு"
+msgstr "அவசர எச்சரிக்கை"
 
 #: indicator/textchannelobserver.cpp:471
 msgid "Emergency Alert: Extreme"
@@ -336,8 +336,8 @@ msgstr[1] "இணைப்புகள்: %1 தொடர்புகள்"
 #, qt-format
 msgid "Attachment: %1 audio clip"
 msgid_plural "Attachments: %1 audio clips"
-msgstr[0] "இணைப்பு: %1ஒலித்துணுக்கு"
-msgstr[1] "இணைப்புகள்: %1 ஒலித்துணுக்குகள்"
+msgstr[0] "இணைப்பு: %1ஒலிக்கீற்று"
+msgstr[1] "இணைப்புகள்: %1 ஒலிக்கீற்றுகள்"
 
 #: indicator/textchannelobserver.cpp:612
 #, qt-format
@@ -395,7 +395,7 @@ msgstr "%1 அழைப்பு முடிவுற்றது"
 #: libtelephonyservice/callnotification.cpp:59
 #, qt-format
 msgid "%1 call declined"
-msgstr "%1 அழைப்பு தவிர்க்கப்பட்டது"
+msgstr "%1 அழைப்பு மறுக்கப்பட்டது"
 
 #: libtelephonyservice/contactwatcher.cpp:157
 msgid "Private Number"
