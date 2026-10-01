@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: 2025-12-25 03:39+0000\n"
-"Last-Translator: Joana R <git@joana.click>\n"
+"PO-Revision-Date: 2026-10-02 10:52+0000\n"
+"Last-Translator: aimar orbe <aimar.orbe@ehu.eus>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/lomiri/telephony-"
 "service/eu/>\n"
 "Language: eu\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 2026.10\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:02+0000\n"
 
 #: indicator/telephony-service-call.desktop.in:4
@@ -105,11 +105,11 @@ msgstr "Autentikazioak huts egin du. Zure kredentzialak berrikusi nahi dituzu?"
 
 #: indicator/authhandler.cpp:91
 msgid "Yes"
-msgstr ""
+msgstr "Bai"
 
 #: indicator/authhandler.cpp:94
 msgid "No"
-msgstr ""
+msgstr "Ez"
 
 #: indicator/displaynamesettings.cpp:35
 #, qt-format
@@ -134,48 +134,37 @@ msgstr "Bidali"
 #: indicator/textchannelobserver.cpp:675
 #, qt-format
 msgid "Message to %1 from %2"
-msgstr ""
+msgstr "%2(r)en mezua %1(r)entzat"
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/messagingmenu.cpp:265 indicator/messagingmenu.cpp:269
-#, fuzzy, qt-format
-#| msgid "Message to group from %1"
+#, qt-format
 msgid "Message to the group from %1"
 msgstr "%1(r)en mezua taldearentzat"
 
 #: indicator/messagingmenu.cpp:345
 msgid "Call back"
-msgstr "Itzuli deia"
+msgstr "Deia itzuli"
 
 #: indicator/messagingmenu.cpp:350
-#, fuzzy
-#| msgid "I missed your call - can you call me now?"
 msgid "Missed your call — can you call me now?"
 msgstr "Zure deia galdu dut - orain berriro deitzerik bai?"
 
 #: indicator/messagingmenu.cpp:351
-#, fuzzy
-#| msgid "I'm running late. I'm on my way."
 msgid "Running late. On my way."
 msgstr "Berandutu egin zait. Bidean naiz."
 
 #: indicator/messagingmenu.cpp:352
-#, fuzzy
-#| msgid "I'm busy at the moment. I'll call you later."
 msgid "Busy at the moment. Will call you later."
-msgstr "Une honetan lanpetuta nago. Gero deituko dizut."
+msgstr "Une honetan lanpetuta nago. Gero deituko zaitut."
 
 #: indicator/messagingmenu.cpp:353
-#, fuzzy
-#| msgid "I'll be 20 minutes late."
 msgid "I am 20 minutes late."
 msgstr "20 minutu berandu iritsiko naiz."
 
 #: indicator/messagingmenu.cpp:354
-#, fuzzy
-#| msgid "Sorry, I'm still busy. I'll call you later."
 msgid "Still busy. Will call you later."
-msgstr "Sentitzen dut, oraindik lanpetuta nago. Gero deituko dizut."
+msgstr "Sentitzen dut, oraindik lanpetuta nago. Gero deituko zaitut."
 
 #: indicator/messagingmenu.cpp:409
 #, qt-format
@@ -242,7 +231,7 @@ msgstr "Gaur <b>%1</b> minutu pasa dituzun deietan"
 
 #: indicator/textchannelobserver.cpp:225
 msgid "Unlock your sim card and try again from the messaging application."
-msgstr "Desblokeatu SIM txartela eta saiatu berriz mezularitza aplikaziotik."
+msgstr "Desblokeatu sim txartela eta saiatu berriz mezularitza aplikaziotik."
 
 #: indicator/textchannelobserver.cpp:227
 msgid "Deactivate flight mode and try again from the messaging application."
@@ -262,27 +251,27 @@ msgstr "Ikusi mezua"
 
 #: indicator/textchannelobserver.cpp:295
 msgid "New Group"
-msgstr ""
+msgstr "Talde berria"
 
 #. TRANSLATORS : %1 is the group name
 #: indicator/textchannelobserver.cpp:302
 #, qt-format
 msgid "You joined group %1 "
-msgstr ""
+msgstr "%1 taldera gehitu zara "
 
 #. TRANSLATORS : %1 is the group name
 #: indicator/textchannelobserver.cpp:306
 #, qt-format
 msgid "You joined group %1"
-msgstr ""
+msgstr "%1 taldera gehitu zara"
 
 #: indicator/textchannelobserver.cpp:309
 msgid "You joined a new group"
-msgstr ""
+msgstr "Talde berri batera gehitu zara"
 
 #: indicator/textchannelobserver.cpp:328
 msgid "View Group"
-msgstr ""
+msgstr "Taldea ikusi"
 
 #: indicator/textchannelobserver.cpp:367 indicator/ussdindicator.cpp:116
 msgid "Ok"
@@ -294,73 +283,71 @@ msgstr "Gorde"
 
 #: indicator/textchannelobserver.cpp:468
 msgid "Emergency Alert"
-msgstr ""
+msgstr "Larrialdi-alerta"
 
 #: indicator/textchannelobserver.cpp:471
 msgid "Emergency Alert: Extreme"
-msgstr ""
+msgstr "Muturreko larrialdi-alerta"
 
 #: indicator/textchannelobserver.cpp:474
 msgid "Emergency Alert: Severe"
-msgstr ""
+msgstr "Larrialdi-alerta: Larria"
 
 #: indicator/textchannelobserver.cpp:477
 msgid "Emergency Alert: Notice"
-msgstr ""
+msgstr "Larrialdi-alerta: Oharra"
 
 #: indicator/textchannelobserver.cpp:482
 msgid "AMBER Alert"
-msgstr ""
+msgstr "AMBER alerta"
 
 #: indicator/textchannelobserver.cpp:485
 msgid "Alert"
-msgstr ""
+msgstr "Alerta"
 
 #: indicator/textchannelobserver.cpp:531
 msgid "Show alert"
-msgstr ""
+msgstr "Alerta bistaratu"
 
 #: indicator/textchannelobserver.cpp:604
 #, qt-format
 msgid "Attachment: %1 image"
 msgid_plural "Attachments: %1 images"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Eranskinak: irudi %1"
+msgstr[1] "Eranskinak: %1 irudi"
 
 #: indicator/textchannelobserver.cpp:606
 #, qt-format
 msgid "Attachment: %1 video"
 msgid_plural "Attachments: %1 videos"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Eranskinak: bideo %1"
+msgstr[1] "Eranskinak: %1 bideo"
 
 #: indicator/textchannelobserver.cpp:608
 #, qt-format
 msgid "Attachment: %1 contact"
 msgid_plural "Attachments: %1 contacts"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Eranskinak: kontaktu %1"
+msgstr[1] "Eranskinak: %1 kontaktu"
 
 #: indicator/textchannelobserver.cpp:610
 #, qt-format
 msgid "Attachment: %1 audio clip"
 msgid_plural "Attachments: %1 audio clips"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Eranskinak: audio-fitxategi %1"
+msgstr[1] "Eranskinak: %1 audio-fitxategi"
 
 #: indicator/textchannelobserver.cpp:612
 #, qt-format
 msgid "Attachment: %1 file"
 msgid_plural "Attachments: %1 files"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Eranskinak: fitxategi %1"
+msgstr[1] "Eranskinak: %1 fitxategi"
 
 #. TRANSLATORS : message displayed when any error occurred while receiving a MMS (case when cellular-data is off, or any downloading issue). Notify that there was a message, the user can find more about it in the messaging-app.
 #: indicator/textchannelobserver.cpp:615
-#, fuzzy
-#| msgid "View message"
 msgid "New MMS message"
-msgstr "Ikusi mezua"
+msgstr "MMS mezu berria"
 
 #. TRANSLATORS : %1 is the recipient name
 #: indicator/textchannelobserver.cpp:679 indicator/textchannelobserver.cpp:683
@@ -387,26 +374,26 @@ msgstr "Utzi"
 
 #: libtelephonyservice/callnotification.cpp:53
 msgid "Conf call on hold"
-msgstr ""
+msgstr "Deia zain"
 
 #: libtelephonyservice/callnotification.cpp:53
 #, qt-format
 msgid "%1 call on hold"
-msgstr ""
+msgstr "%1 deia zain"
 
 #: libtelephonyservice/callnotification.cpp:56
 msgid "Conf call ended"
-msgstr ""
+msgstr "Deia amaituta"
 
 #: libtelephonyservice/callnotification.cpp:56
 #, qt-format
 msgid "%1 call ended"
-msgstr ""
+msgstr "%1 deia amaituta"
 
 #: libtelephonyservice/callnotification.cpp:59
 #, qt-format
 msgid "%1 call declined"
-msgstr ""
+msgstr "%1 deia baztertua"
 
 #: libtelephonyservice/contactwatcher.cpp:157
 msgid "Private Number"
