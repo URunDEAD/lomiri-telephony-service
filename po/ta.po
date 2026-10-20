@@ -8,8 +8,9 @@ msgstr ""
 "Project-Id-Version: telephony-service\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-16 17:03+0100\n"
-"PO-Revision-Date: 2026-10-02 10:52+0000\n"
-"Last-Translator: Alagirisamy Rengaraj <radhaalagirisamy@gmail.com>\n"
+"PO-Revision-Date: 2026-10-22 21:45+0000\n"
+"Last-Translator: Alagirisamy Rengaraj "
+"<ahalyachinnasamy1967@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/telephony-"
 "service/ta/>\n"
 "Language: ta\n"
@@ -17,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.10\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 "X-Launchpad-Export-Date: 2017-01-04 06:03+0000\n"
 
 #: indicator/telephony-service-call.desktop.in:4
@@ -30,7 +31,7 @@ msgstr "குறுஞ்செய்தி"
 
 #: approver/approver.cpp:66
 msgid "Unknown caller"
-msgstr "அறியாத அழைப்பாளர்"
+msgstr "தெரியாத அழைப்பாளர்"
 
 #: approver/approver.cpp:94
 msgid "I'm busy at the moment. I'll call later."
@@ -47,7 +48,7 @@ msgstr "தயவு செய்து பின்னர் மீண்டு
 #: approver/approver.cpp:457
 #, qt-format
 msgid "On [%1]"
-msgstr "இயக்கத்தில்[%1]"
+msgstr "[%1]மீது"
 
 #: approver/approver.cpp:461 indicator/messagingmenu.cpp:414
 msgid "Private number"
@@ -56,7 +57,7 @@ msgstr "தனிப்பட்ட எண்"
 #: approver/approver.cpp:464 indicator/messagingmenu.cpp:244
 #: indicator/messagingmenu.cpp:418 indicator/textchannelobserver.cpp:640
 msgid "Unknown number"
-msgstr "அறியாத எண்"
+msgstr "தெரியாத எண்"
 
 #: approver/approver.cpp:470 approver/approver.cpp:485
 msgid "Caller number is not available"
@@ -68,7 +69,7 @@ msgstr "தனிப்பட்ட எண்ணிலிருந்து அ�
 
 #: approver/approver.cpp:479
 msgid "Calling from unknown number"
-msgstr "அறியாத எண்ணிலிருந்து அழைப்பு"
+msgstr "தெரியாத எண்ணிலிருந்து அழைப்பு"
 
 #: approver/approver.cpp:482
 #, qt-format
@@ -85,19 +86,19 @@ msgstr "ஏற்றுக்கொள்"
 
 #: approver/approver.cpp:543
 msgid "End + Answer"
-msgstr "முடி +பதிலளி"
+msgstr "நிறுத்து +பதிலளி"
 
 #: approver/approver.cpp:552
 msgid "Decline"
-msgstr "மறுத்தல்"
+msgstr "மறுக்கவும்"
 
 #: approver/approver.cpp:560
 msgid "Message & decline"
-msgstr "செய்தியிடு & மறுத்தல்"
+msgstr "செய்தியிடவும் & மறுக்கவும்"
 
 #: approver/main.cpp:46
 msgid "Telephony Service Approver"
-msgstr "தொலைப்பேசி சேவை ஒப்பளிப்பவர்"
+msgstr "தொலைப்பேசி சேவை ஒப்புதல் அளிப்பவர்"
 
 #: indicator/authhandler.cpp:72
 msgid "Authentication failed. Do you want to review your credentials?"
@@ -205,7 +206,7 @@ msgstr "இன்று பெறப்பட்ட உரைச் செய்
 
 #: indicator/metrics.cpp:45
 msgid "No text messages received today"
-msgstr "இன்று உரைச்செய்தி ஏதும் பெறப்படவில்லை"
+msgstr "இன்று உரைச்செய்திகள் ஏதும் பெறப்படவில்லை"
 
 #: indicator/metrics.cpp:46
 #, qt-format
@@ -233,15 +234,16 @@ msgstr "<b>%1</b> நிமிடங்கள் அழைப்புக்க�
 #: indicator/textchannelobserver.cpp:225
 msgid "Unlock your sim card and try again from the messaging application."
 msgstr ""
-"உங்கள் செறிவட்டை பூட்டைத் திற,மீண்டும் செய்தி செயலியிலிருந்து முயற்சிசெய்."
+"உங்கள் செறிவட்டை பூட்டைத் திறக்கவும்,மீண்டும் செய்திச் செயலியிலிருந்து முயற்சிசெய்யவும்."
 
 #: indicator/textchannelobserver.cpp:227
 msgid "Deactivate flight mode and try again from the messaging application."
-msgstr "விமானமுறை செயலிழக்கச்செய், மீண்டும் செய்திசெயலியிலிருந்து முயற்சிசெய்."
+msgstr ""
+"விமானமுறையை செயலிழக்கச்செய்யவும், மீண்டும் செய்திச் செயலியிலிருந்து முயற்சிசெய்யவும்."
 
 #: indicator/textchannelobserver.cpp:230
 msgid "Try again from the messaging application."
-msgstr "மீண்டும் செய்திச்செயலியிலிருந்து முயற்சிசெய்."
+msgstr "மீண்டும் செய்திச் செயலியிலிருந்து முயற்சிசெய்யவும்."
 
 #: indicator/textchannelobserver.cpp:236
 msgid "The message could not be sent"
@@ -259,13 +261,13 @@ msgstr "புதிய குழு"
 #: indicator/textchannelobserver.cpp:302
 #, qt-format
 msgid "You joined group %1 "
-msgstr "நீங்கள் %1 குழுவில் இணைந்துள்ளீர்கள் "
+msgstr "நீங்கள் %1 குழுவில் சேர்ந்துள்ளீர்கள் "
 
 #. TRANSLATORS : %1 is the group name
 #: indicator/textchannelobserver.cpp:306
 #, qt-format
 msgid "You joined group %1"
-msgstr "நீங்கள் %1 குழுவில் இணைந்துள்ளீர்கள்"
+msgstr "நீங்கள் %1 குழுவில் சேர்ந்துள்ளீர்கள்"
 
 #: indicator/textchannelobserver.cpp:309
 msgid "You joined a new group"
@@ -281,7 +283,7 @@ msgstr "சரி"
 
 #: indicator/textchannelobserver.cpp:373
 msgid "Save"
-msgstr "சேமி"
+msgstr "சேமிக்கவும்"
 
 #: indicator/textchannelobserver.cpp:468
 msgid "Emergency Alert"
@@ -364,7 +366,7 @@ msgstr "%1 லிருந்து செய்தி"
 
 #: indicator/textchannelobserver.cpp:910
 msgid "Please, select a SIM card:"
-msgstr "தயவுசெய்து, ஒரு செறிவட்டை தேர்ந்தெடு:"
+msgstr "தயவுசெய்து, ஒரு செறிவட்டையை தேர்ந்தெடுக்கவும்:"
 
 #: indicator/ussdindicator.cpp:119
 msgid "Reply"
@@ -403,7 +405,7 @@ msgstr "தனிப்பட்ட எண்"
 
 #: libtelephonyservice/contactwatcher.cpp:159
 msgid "Unknown Number"
-msgstr "அறியாத எண்"
+msgstr "தெரியாத எண்"
 
 #, fuzzy
 #~| msgid "Telephony Service"
