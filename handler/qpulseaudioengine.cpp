@@ -116,6 +116,8 @@ QPulseAudioEngineWorker::QPulseAudioEngineWorker(QObject *parent)
     , m_bt_hsp_profile("")
     , m_voicecallhighest("")
     , m_voicecallprofile("")
+    , m_vcsplit(false)
+    , m_voicecallcardindex(PA_INVALID_INDEX)
 
 {
     m_mainLoop = pa_threaded_mainloop_new();
@@ -241,16 +243,39 @@ QPulseAudioEngineWorker::~QPulseAudioEngineWorker()
     }
 }
 
+/* PulseAudio >= 15 and pipewire-pulse name ALSA UCM device ports
+ * "[Out] <Device>" / "[In] <Device>". Compare against the bare UCM device
+ * name (Earpiece, Speaker, Headphones, Headset, Mic, Mic1, ...); legacy
+ * droid names ("output-earpiece", ...) pass through unchanged. */
+static const char *ucmPortName(const char *name)
+{
+    if (!name)
+        return "";
+    if (!strncmp(name, "[Out] ", 6))
+        return name + 6;
+    if (!strncmp(name, "[In] ", 5))
+        return name + 5;
+    return name;
+}
+
 void QPulseAudioEngineWorker::cardInfoCallback(const pa_card_info *info)
 {
     pa_card_profile_info2 *voice_call = NULL, *highest = NULL;
     pa_card_profile_info2 *hfp = NULL, *hsp = NULL, *a2dp = NULL;
+    pa_card_profile_info2 *vc_earpiece = NULL, *vc_speaker = NULL;
 
     /* For now we only support one card with the voicecall feature */
     for (int i = 0; i < info->n_profiles; i++) {
         if (!highest || info->profiles2[i]->priority > highest->priority)
             highest = info->profiles2[i];
-        if (!strcmp(info->profiles2[i]->name, "voicecall") ||
+        if (!strncmp(info->profiles2[i]->name, "Voice Call (", 12)) {
+            /* Split UCM profile, e.g. "Voice Call (Earpiece, Mic1)" */
+            pa_card_profile_info2 *p = info->profiles2[i];
+            if (strstr(p->name, "Earpiece") && (!vc_earpiece || p->priority > vc_earpiece->priority))
+                vc_earpiece = p;
+            if (strstr(p->name, "Speaker") && (!vc_speaker || p->priority > vc_speaker->priority))
+                vc_speaker = p;
+        } else if (!strcmp(info->profiles2[i]->name, "voicecall") ||
             !strcmp(info->profiles2[i]->name, "Voice Call"))
             voice_call = info->profiles2[i];
         else if (!strcmp(info->profiles2[i]->name, PULSEAUDIO_PROFILE_HFP) &&
@@ -272,6 +297,18 @@ void QPulseAudioEngineWorker::cardInfoCallback(const pa_card_info *info)
     qDebug("1");
         m_voicecallprofile = voice_call->name;
     qDebug("2");
+    }
+
+    if (!voice_call && vc_earpiece && vc_speaker) {
+        qDebug("Found card with split voicecall profiles: '%s' (earpiece '%s', speaker '%s')",
+               info->name, vc_earpiece->name, vc_speaker->name);
+        m_voicecallcard = info->name;
+        m_voicecallcardindex = info->index;
+        m_voicecallhighest = highest->name;
+        m_voicecallprofile = vc_earpiece->name;
+        m_vcearpieceprofile = vc_earpiece->name;
+        m_vcspeakerprofile = vc_speaker->name;
+        m_vcsplit = true;
     }
 
     /* Handle the use cases needed for bluetooth */
@@ -300,18 +337,21 @@ void QPulseAudioEngineWorker::sinkInfoCallback(const pa_sink_info *info)
     AudioModes modes;
 
     for (int i = 0; i < info->n_ports; i++) {
-        if (!strcmp(info->ports[i]->name, "output-earpiece") ||
-            !strcmp(info->ports[i]->name, "Earpiece"))
+        const char *port = ucmPortName(info->ports[i]->name);
+        if (!strcmp(port, "output-earpiece") ||
+            !strcmp(port, "Earpiece"))
             earpiece = info->ports[i];
-        else if (!strcmp(info->ports[i]->name, "output-wired_headset") &&
+        else if ((!strcmp(port, "output-wired_headset") ||
+                  !strcmp(port, "Headset")) &&
                 (info->ports[i]->available != PA_PORT_AVAILABLE_NO))
             wired_headset = info->ports[i];
-        else if ((!strcmp(info->ports[i]->name, "output-wired_headphone") ||
-                  !strcmp(info->ports[i]->name, "Headphone")) &&
+        else if ((!strcmp(port, "output-wired_headphone") ||
+                  !strcmp(port, "Headphone") ||
+                  !strcmp(port, "Headphones")) &&
                 (info->ports[i]->available != PA_PORT_AVAILABLE_NO))
             wired_headphone = info->ports[i];
-        else if (!strcmp(info->ports[i]->name, "output-speaker") ||
-                 !strcmp(info->ports[i]->name, "Speaker"))
+        else if (!strcmp(port, "output-speaker") ||
+                 !strcmp(port, "Speaker"))
             speaker = info->ports[i];
         else if (!strcmp(info->ports[i]->name, "output-bluetooth_sco"))
             bluetooth_sco = info->ports[i];
@@ -324,6 +364,18 @@ void QPulseAudioEngineWorker::sinkInfoCallback(const pa_sink_info *info)
         else if (!strcmp(info->ports[i]->name, "output-speaker+wired_headphone") &&
                 (info->ports[i]->available != PA_PORT_AVAILABLE_NO))
             speaker_and_wired_headphone = info->ports[i];
+    }
+
+    /* Split UCM voice profiles: the active profile's sink carries only the
+     * earpiece or only the speaker port; the mode is chosen by profile. */
+    if (m_vcsplit && info->card == m_voicecallcardindex && (earpiece || speaker)) {
+        modes.append(AudioModeEarpiece);
+        modes.append(AudioModeSpeaker);
+        m_audiomode = (m_audiomode & AudioModeSpeaker) ? AudioModeSpeaker : AudioModeEarpiece;
+        m_nametoset = info->name;
+        if (modes != m_availableAudioModes)
+            m_availableAudioModes = modes;
+        return;
     }
 
     if (!earpiece || !speaker)
@@ -389,11 +441,14 @@ void QPulseAudioEngineWorker::sourceInfoCallback(const pa_source_info *info)
         return;  /* Not the right source */
 
     for (int i = 0; i < info->n_ports; i++) {
-        if (!strcmp(info->ports[i]->name, "input-builtin_mic") ||
-            !strcmp(info->ports[i]->name, "DigitalMic"))
+        const char *port = ucmPortName(info->ports[i]->name);
+        if (!strcmp(port, "input-builtin_mic") ||
+            !strcmp(port, "DigitalMic") ||
+            (!builtin_mic && (!strcmp(port, "Mic") || !strcmp(port, "Mic1"))))
             builtin_mic = info->ports[i];
-        else if ((!strcmp(info->ports[i]->name, "input-wired_headset") ||
-                  !strcmp(info->ports[i]->name, "HeadsetMic")) &&
+        else if ((!strcmp(port, "input-wired_headset") ||
+                  !strcmp(port, "HeadsetMic") ||
+                  !strcmp(port, "Headset")) &&
                 (info->ports[i]->available != PA_PORT_AVAILABLE_NO))
             wired_headset = info->ports[i];
         else if (!strcmp(info->ports[i]->name, "input-bluetooth_sco_headset"))
@@ -533,6 +588,9 @@ int QPulseAudioEngineWorker::setupVoiceCall()
     /* Walk through the list of devices, find the voice call capable card and
      * identify if we have bluetooth capable devices (hsp and a2dp) */
     m_voicecallcard = m_voicecallhighest = m_voicecallprofile = "";
+    m_vcsplit = false;
+    m_voicecallcardindex = PA_INVALID_INDEX;
+    m_vcearpieceprofile = m_vcspeakerprofile = m_vcactiveprofile = "";
     m_bt_hsp = m_bt_hsp_a2dp = m_bt_hsp_profile = "";
     o = pa_context_get_card_info_list(m_context, cardinfo_cb, this);
     if (!handleOperation(o, "pa_context_get_card_info_list"))
@@ -616,14 +674,24 @@ void QPulseAudioEngineWorker::setCallMode(CallStatus callstatus, AudioMode audio
     /* Switch the virtual card mode when call is active and not active
      * This needs to be done before sink/source gets updated, because after changing mode
      * it will automatically move to input/output-parking */
-    if ((m_callstatus == CallActive) && (p_callstatus != CallActive) &&
-            (m_voicecallcard != "") && (m_voicecallprofile != "")) {
+    std::string vcprofile = m_voicecallprofile;
+    if (m_vcsplit)
+        vcprofile = (m_audiomode & AudioModeSpeaker) ? m_vcspeakerprofile : m_vcearpieceprofile;
+    if ((m_callstatus == CallActive) && (m_voicecallcard != "") && (vcprofile != "") &&
+            ((p_callstatus != CallActive) || (m_vcsplit && vcprofile != m_vcactiveprofile))) {
         qDebug("Setting PulseAudio card '%s' profile '%s'",
-                m_voicecallcard.c_str(), m_voicecallprofile.c_str());
+                m_voicecallcard.c_str(), vcprofile.c_str());
         o = pa_context_set_card_profile_by_name(m_context,
-                m_voicecallcard.c_str(), m_voicecallprofile.c_str(), success_cb, this);
+                m_voicecallcard.c_str(), vcprofile.c_str(), success_cb, this);
         if (!handleOperation(o, "pa_context_set_card_profile_by_name"))
             return;
+        m_vcactiveprofile = vcprofile;
+        if (m_vcsplit) {
+            /* Let the server create the new profile's sink/source first */
+            pa_threaded_mainloop_unlock(m_mainLoop);
+            usleep(300000);
+            pa_threaded_mainloop_lock(m_mainLoop);
+        }
     } else if ((m_callstatus == CallEnded) && (m_voicecallcard != "") && (m_voicecallhighest != "")) {
         /* If using droid, make sure to restore to the profile that has the highest score */
         qDebug("Restoring PulseAudio card '%s' to profile '%s'",

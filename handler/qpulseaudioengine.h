@@ -96,6 +96,11 @@ private:
     std::string m_defaultsink, m_defaultsource;
     std::string m_bt_hsp, m_bt_hsp_a2dp, m_bt_hsp_profile;
     std::string m_voicecallcard, m_voicecallhighest, m_voicecallprofile;
+    /* PipeWire/PulseAudio >= 15 UCM: one "Voice Call (<devices>)" profile per
+     * device combination, so earpiece/speaker is a profile, not a port. */
+    bool m_vcsplit;
+    uint32_t m_voicecallcardindex;
+    std::string m_vcearpieceprofile, m_vcspeakerprofile, m_vcactiveprofile;
 
     bool handleOperation(pa_operation *operation, const char *func_name);
     void releasePulseContext(void);
