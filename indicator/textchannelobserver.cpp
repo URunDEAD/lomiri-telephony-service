@@ -438,7 +438,10 @@ void TextChannelObserver::triggerNotificationForMessage(const Tp::TextChannelPtr
         // FIXME: For accounts not based on phone numbers, don't try to match contacts for now
         if (account->addressableVCardFields().contains("tel")) {
             request->setManager(ContactUtils::sharedManager());
-            request->start();
+            if (!request->start()) {
+                // Never drop the notification when the contacts backend fails.
+                Q_EMIT request->stateChanged(QContactAbstractRequest::FinishedState);
+            }
         } else {
             // just emit the signal to pretend we did a contact search
             Q_EMIT request->stateChanged(QContactAbstractRequest::FinishedState);
